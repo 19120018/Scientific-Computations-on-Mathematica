@@ -1,0 +1,769 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     29511,        760]
+NotebookOptionsPosition[     28916,        737]
+NotebookOutlinePosition[     29289,        753]
+CellTagsIndexPosition[     29246,        750]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   StyleBox[
+    RowBox[{
+    "Shooting", " ", "Method", " ", "for", " ", "Solving", " ", 
+     "Differential", " ", 
+     RowBox[{"eq", ".", "s"}]}],
+    FontColor->RGBColor[1, 0, 0]], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{"1", ":", 
+    RowBox[{
+     RowBox[{"-", " ", 
+      StyleBox["Can",
+       FontColor->RGBColor[1, 0, 1]]}], 
+     StyleBox[" ",
+      FontColor->RGBColor[1, 0, 1]], 
+     StyleBox["be",
+      FontColor->RGBColor[1, 0, 1]], 
+     StyleBox[" ",
+      FontColor->RGBColor[1, 0, 1]], 
+     StyleBox["used",
+      FontColor->RGBColor[1, 0, 1]], 
+     StyleBox[" ",
+      FontColor->RGBColor[1, 0, 1]], 
+     StyleBox["to",
+      FontColor->RGBColor[1, 0, 1]], 
+     StyleBox[" ",
+      FontColor->RGBColor[1, 0, 1]], 
+     StyleBox["Solve",
+      FontColor->RGBColor[1, 0, 1]], 
+     StyleBox[" ",
+      FontColor->RGBColor[1, 0, 1]], 
+     StyleBox["Boundary",
+      FontColor->RGBColor[0, 0, 1]], 
+     StyleBox[" ",
+      FontColor->RGBColor[0, 0, 1]], 
+     StyleBox["value",
+      FontColor->RGBColor[0, 0, 1]], 
+     StyleBox[" ",
+      FontColor->RGBColor[0, 0, 1]], 
+     StyleBox[
+      RowBox[{"Problems", "."}],
+      FontColor->RGBColor[0, 0, 1]], 
+     StyleBox["\[IndentingNewLine]",
+      FontColor->RGBColor[1, 0, 1]], 
+     StyleBox["2",
+      FontColor->RGBColor[1, 0, 1]]}], 
+    StyleBox[":",
+     FontColor->RGBColor[1, 0, 1]], 
+    RowBox[{
+     StyleBox[
+      RowBox[{
+       RowBox[{"-", " ", "By"}], " ", "Shooting", " ", "Method", " ", 
+       RowBox[{"B", ".", "V"}], " ", "problem", " ", "becomes", " ", 
+       "iniatial", " ", "Value", " ", "Problem"}],
+      FontColor->RGBColor[1, 0, 1]], "."}]}], "  ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.7542791950382977`*^9, 3.7542793419390774`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{
+   StyleBox[
+    RowBox[{"Using", " ", "Shooting", " ", "Method"}],
+    FontColor->GrayLevel[0.5]], 
+   StyleBox[" ",
+    FontColor->GrayLevel[0.5]], "\[IndentingNewLine]", "=", 
+   RowBox[{">", 
+    RowBox[{
+     StyleBox["From",
+      FontColor->RGBColor[1, 0, 0]], 
+     StyleBox[" ",
+      FontColor->RGBColor[1, 0, 0]], 
+     StyleBox["Shooting",
+      FontColor->RGBColor[1, 0, 0]], 
+     StyleBox[" ",
+      FontColor->RGBColor[1, 0, 0]], 
+     StyleBox["point",
+      FontColor->RGBColor[1, 0, 0]], 
+     StyleBox[" ",
+      FontColor->RGBColor[1, 0, 0]], 
+     StyleBox["we",
+      FontColor->RGBColor[1, 0, 0]], 
+     StyleBox[" ",
+      FontColor->RGBColor[1, 0, 0]], 
+     StyleBox["shoot",
+      FontColor->RGBColor[1, 0, 0]], 
+     StyleBox[" ",
+      FontColor->RGBColor[1, 0, 0]], 
+     StyleBox["the",
+      FontColor->RGBColor[1, 0, 0]], 
+     StyleBox[" ",
+      FontColor->RGBColor[1, 0, 0]], 
+     StyleBox["values",
+      FontColor->RGBColor[1, 0, 0]], 
+     StyleBox[" ",
+      FontColor->RGBColor[1, 0, 0]], 
+     StyleBox["of",
+      FontColor->RGBColor[1, 0, 0]], 
+     StyleBox[" ",
+      FontColor->RGBColor[1, 0, 0]], 
+     StyleBox[
+      RowBox[{"dep", ".", " ", "variable"}],
+      FontColor->RGBColor[1, 0, 0]], 
+     StyleBox[" ",
+      FontColor->RGBColor[1, 0, 0]], 
+     StyleBox["at",
+      FontColor->RGBColor[1, 0, 0]], 
+     StyleBox[" ",
+      FontColor->RGBColor[1, 0, 0]], 
+     StyleBox["varying",
+      FontColor->RGBColor[1, 0, 0]], 
+     StyleBox[" ",
+      FontColor->RGBColor[1, 0, 0]], 
+     StyleBox["shooting",
+      FontColor->RGBColor[1, 0, 0]], 
+     StyleBox[" ",
+      FontColor->RGBColor[1, 0, 0]], 
+     RowBox[{
+      StyleBox["Angles",
+       FontColor->RGBColor[1, 0, 0]], 
+      StyleBox[".",
+       FontColor->RGBColor[1, 0, 0]], "\[IndentingNewLine]", 
+      RowBox[{"(*", 
+       RowBox[{
+        StyleBox["Special",
+         FontColor->RGBColor[0.6, 0.4, 0.2]], 
+        StyleBox[" ",
+         FontColor->RGBColor[0.6, 0.4, 0.2]], 
+        StyleBox["Remarks",
+         FontColor->RGBColor[0.6, 0.4, 0.2]], 
+        StyleBox[" ",
+         FontColor->RGBColor[0.6, 0.4, 0.2]], 
+        StyleBox["about",
+         FontColor->RGBColor[0.6, 0.4, 0.2]], 
+        StyleBox[" ",
+         FontColor->RGBColor[0.6, 0.4, 0.2]], 
+        StyleBox["Shooting",
+         FontColor->RGBColor[0.6, 0.4, 0.2]], 
+        StyleBox[" ",
+         FontColor->RGBColor[0.6, 0.4, 0.2]], 
+        RowBox[{
+         StyleBox["Method",
+          FontColor->RGBColor[0.6, 0.4, 0.2]], " ", ":", " ", 
+         RowBox[{
+          StyleBox["in",
+           FontColor->RGBColor[1, 0, 0]], 
+          StyleBox[" ",
+           FontColor->RGBColor[1, 0, 0]], 
+          StyleBox["mathematica",
+           FontColor->RGBColor[1, 0, 0]], 
+          StyleBox[" ",
+           FontColor->RGBColor[1, 0, 0]], 
+          StyleBox["Shooting",
+           FontColor->RGBColor[1, 0, 0]], 
+          StyleBox[" ",
+           FontColor->RGBColor[1, 0, 0]], 
+          StyleBox["method",
+           FontColor->RGBColor[1, 0, 0]], 
+          StyleBox[" ",
+           FontColor->RGBColor[1, 0, 0]], 
+          StyleBox["can",
+           FontColor->RGBColor[1, 0, 0]], 
+          StyleBox[" ",
+           FontColor->RGBColor[1, 0, 0]], 
+          StyleBox["be",
+           FontColor->RGBColor[1, 0, 0]], 
+          StyleBox[" ",
+           FontColor->RGBColor[1, 0, 0]], 
+          StyleBox["implemented",
+           FontColor->RGBColor[1, 0, 0]], 
+          StyleBox[" ",
+           FontColor->RGBColor[1, 0, 0]], 
+          StyleBox["by",
+           FontColor->RGBColor[1, 0, 0]], 
+          StyleBox[" ",
+           FontColor->RGBColor[1, 0, 0]], 
+          StyleBox["Using",
+           FontColor->RGBColor[1, 0, 0]], 
+          StyleBox[" ",
+           FontColor->RGBColor[1, 0, 0]], 
+          StyleBox[
+           RowBox[{"NDSolve", "[", "]"}],
+           FontColor->RGBColor[1, 0, 0]], " ", 
+          StyleBox["Commandand",
+           FontColor->RGBColor[1, 0, 0]], 
+          StyleBox[" ",
+           FontColor->RGBColor[1, 0, 0]], 
+          StyleBox["due",
+           FontColor->RGBColor[1, 0, 0]], 
+          StyleBox[" ",
+           FontColor->RGBColor[1, 0, 0]], 
+          StyleBox["to",
+           FontColor->RGBColor[1, 0, 0]], 
+          StyleBox[" ",
+           FontColor->RGBColor[1, 0, 0]], 
+          StyleBox["its",
+           FontColor->RGBColor[1, 0, 0]], 
+          StyleBox[" ",
+           FontColor->RGBColor[1, 0, 0]], 
+          StyleBox["pure",
+           FontColor->RGBColor[1, 0, 0]], 
+          StyleBox[" ",
+           FontColor->RGBColor[1, 0, 0]], 
+          StyleBox["function",
+           FontColor->RGBColor[1, 0, 0]], 
+          StyleBox[" ",
+           FontColor->RGBColor[1, 0, 0]], 
+          StyleBox["Solutions",
+           FontColor->RGBColor[1, 0, 0]], 
+          StyleBox[" ",
+           FontColor->RGBColor[1, 0, 0]], 
+          RowBox[{
+           StyleBox["property",
+            FontColor->RGBColor[1, 0, 0]], 
+           StyleBox[".",
+            FontColor->RGBColor[1, 0, 0]], 
+           StyleBox[" ",
+            FontColor->RGBColor[1, 0, 0]], 
+           StyleBox["\[IndentingNewLine]",
+            FontColor->RGBColor[1, 0, 0]], 
+           RowBox[{"(*", " ", 
+            RowBox[{
+             StyleBox["Points",
+              FontColor->RGBColor[1, 0, 0]], 
+             StyleBox[" ",
+              FontColor->RGBColor[1, 0, 0]], "for", " ", "converting", " ", 
+             "a", " ", 
+             StyleBox[
+              RowBox[{"B", ".", "V"}],
+              FontColor->RGBColor[1, 0, 0]], 
+             StyleBox[" ",
+              FontColor->RGBColor[1, 0, 0]], 
+             StyleBox["problem",
+              FontColor->RGBColor[1, 0, 0]], 
+             StyleBox[" ",
+              FontColor->RGBColor[1, 0, 0]], 
+             StyleBox["into",
+              FontColor->RGBColor[1, 0, 0]], 
+             StyleBox[" ",
+              FontColor->RGBColor[1, 0, 0]], 
+             StyleBox["an",
+              FontColor->RGBColor[1, 0, 0]], 
+             StyleBox[" ",
+              FontColor->RGBColor[1, 0, 0]], 
+             StyleBox["iniatial",
+              FontColor->RGBColor[1, 0, 0]], 
+             StyleBox[" ",
+              FontColor->RGBColor[1, 0, 0]], 
+             StyleBox["value",
+              FontColor->RGBColor[1, 0, 0]], 
+             StyleBox[" ",
+              FontColor->RGBColor[1, 0, 0]], 
+             RowBox[{
+              StyleBox["Problem",
+               FontColor->RGBColor[1, 0, 0]], 
+              StyleBox[".",
+               FontColor->RGBColor[1, 0, 0]], "\[IndentingNewLine]", 
+              StyleBox[
+               RowBox[{"1", ":", 
+                RowBox[{
+                 RowBox[{"-", " ", "List"}], " ", "out", " ", "the", " ", 
+                 RowBox[{"B", ".", "C"}], " ", "or", "  ", "boundary", " ", 
+                 RowBox[{"points", ".", "\[IndentingNewLine]", "2"}]}], ":", 
+                RowBox[{
+                 RowBox[{"-", " ", "decide"}], " ", "shooting", " ", "and", 
+                 " ", "target", " ", "point", " ", "out", " ", "of", " ", 
+                 "the", " ", "boundary", " ", 
+                 RowBox[{"points", ".", "\[IndentingNewLine]", "3"}]}], ":", 
+                RowBox[{
+                 RowBox[{"-", " ", "determine"}], " ", "the", " ", "shooting",
+                  " ", "angle", " ", "or", " ", "shooting", " ", "slope", " ",
+                  "at", " ", "the", " ", "shooting", " ", "point", " ", 
+                 "such", " ", "that", " ", "u", " ", "sucessfully", " ", 
+                 "hit", " ", "the", " ", 
+                 RowBox[{"target", "."}]}]}],
+               FontColor->GrayLevel[0]]}]}], 
+            StyleBox[" ",
+             FontColor->GrayLevel[0]], 
+            StyleBox["*)",
+             FontColor->GrayLevel[0]]}]}]}]}]}]}]}]}]}]}]}]], "Input",
+ CellChangeTimes->{{3.7542793595975523`*^9, 3.7542794295268393`*^9}, 
+   3.754279525851226*^9, {3.755420970862226*^9, 3.7554209954363823`*^9}, {
+   3.7554216308028884`*^9, 3.755421754692848*^9}, {3.7554242680199504`*^9, 
+   3.7554242755824904`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Note", ":", " ", 
+   RowBox[{"(*", " ", 
+    StyleBox[
+     RowBox[{
+      RowBox[{
+       RowBox[{"Tan", "[", 
+        RowBox[{"Shooting", " ", "angle"}], "]"}], "=", " ", 
+       RowBox[{
+        RowBox[{"Shooting", " ", "Slope"}], "=", " ", "Gradient"}]}], "  ", 
+      ",", ",", ",", ",", ",", " ", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"e", ".", "g"}], 
+        StyleBox[
+         RowBox[{" ", " "}]], 
+        RowBox[{
+         RowBox[{
+          RowBox[{"y", "'"}], "[", 
+          RowBox[{"shooting", " ", "point"}], "]"}], ".", 
+         "\[IndentingNewLine]", "4"}]}], ":", 
+       RowBox[{
+        RowBox[{"-", " ", "Thus"}], " ", "the", " ", 
+        RowBox[{"B", ".", "V"}], " ", "problem", " ", "will", " ", "also", 
+        " ", "become", " ", "an", " ", "initial", " ", "value", " ", 
+        RowBox[{"problem", "."}]}]}]}],
+     FontColor->RGBColor[1, 0.5, 0]], "*)"}], "\[IndentingNewLine]", 
+   "Example", ":", 
+   RowBox[{
+    RowBox[{"-", " ", "solve"}], " ", "the", " ", "differential", " ", 
+    RowBox[{"eq", "."}]}], " ", ":", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"x", "''"}], "[", "t", "]"}], "+", 
+     RowBox[{
+      RowBox[{"\[Omega]", "^", "2"}], " ", 
+      RowBox[{"x", "[", "t", "]"}]}]}], "\[Equal]", "0"}]}], ",", " ", 
+  RowBox[{
+   RowBox[{"by", " ", "using", " ", "Shooting", " ", 
+    RowBox[{"method", ".", "The"}], " ", 
+    RowBox[{"B", ".", "c"}], " ", "are"}], " ", ";", 
+   RowBox[{
+    RowBox[{"x", "[", "0", "]"}], "=", "2"}], ";", 
+   RowBox[{
+    RowBox[{"x", "[", "T", "]"}], "=", "2"}], ";"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"(*", " ", "Solution", " ", "*)"}]}]}], "Input",
+ CellChangeTimes->{{3.75531484775445*^9, 3.755314894072048*^9}, {
+   3.755314954329261*^9, 3.755315031864921*^9}, {3.755315069924656*^9, 
+   3.75531515437148*^9}, {3.7553156966916714`*^9, 3.7553157124905243`*^9}, {
+   3.7553158277531*^9, 3.7553158658352256`*^9}, {3.75531590562055*^9, 
+   3.7553159335932426`*^9}, {3.7553160237164726`*^9, 3.755316094239363*^9}, {
+   3.755316175324787*^9, 3.7553161849811025`*^9}, 3.7554218120594687`*^9, {
+   3.7554218831775465`*^9, 3.7554218873495193`*^9}, {3.7554219329674053`*^9, 
+   3.755421941983137*^9}, {3.7554269262107844`*^9, 3.7554269375252085`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"we", " ", "decided", " ", "that"}], ",", " ", 
+    RowBox[{
+     StyleBox["t",
+      FontColor->RGBColor[1, 0, 0]], 
+     StyleBox["=",
+      FontColor->RGBColor[1, 0, 0]], 
+     RowBox[{
+      StyleBox[
+       RowBox[{
+       "0", " ", "is", " ", "shooting", " ", "point", " ", "and", " ", "t"}],
+       FontColor->RGBColor[1, 0, 0]], 
+      StyleBox["=",
+       FontColor->RGBColor[1, 0, 0]], 
+      RowBox[{
+       StyleBox["T",
+        FontColor->RGBColor[1, 0, 0]], 
+       StyleBox[" ",
+        FontColor->RGBColor[1, 0, 0]], 
+       StyleBox["is",
+        FontColor->RGBColor[1, 0, 0]], 
+       StyleBox[" ",
+        FontColor->RGBColor[1, 0, 0]], 
+       StyleBox["a",
+        FontColor->RGBColor[1, 0, 0]], 
+       StyleBox[" ",
+        FontColor->RGBColor[1, 0, 0]], 
+       StyleBox["Target",
+        FontColor->RGBColor[1, 0, 0]], 
+       StyleBox[" ",
+        FontColor->RGBColor[1, 0, 0]], 
+       StyleBox[
+        RowBox[{"point", ".", " ", "Here"}],
+        FontColor->RGBColor[1, 0, 0]], 
+       StyleBox[" ",
+        FontColor->RGBColor[1, 0, 0]], 
+       StyleBox["Shooting",
+        FontColor->RGBColor[0, 1, 0]], 
+       StyleBox[" ",
+        FontColor->RGBColor[0, 1, 0]], 
+       StyleBox["Angle",
+        FontColor->RGBColor[0, 1, 0]], 
+       StyleBox[" ",
+        FontColor->RGBColor[0, 1, 0]], 
+       StyleBox["can",
+        FontColor->RGBColor[0, 1, 0]], 
+       StyleBox[" ",
+        FontColor->RGBColor[0, 1, 0]], 
+       StyleBox["be",
+        FontColor->RGBColor[0, 1, 0]], 
+       StyleBox[" ",
+        FontColor->RGBColor[0, 1, 0]], 
+       StyleBox["found",
+        FontColor->RGBColor[0, 1, 0]], 
+       StyleBox[" ",
+        FontColor->RGBColor[0, 1, 0]], 
+       StyleBox["by",
+        FontColor->RGBColor[0, 1, 0]], 
+       StyleBox[" ",
+        FontColor->RGBColor[0, 1, 0]], 
+       StyleBox[
+        RowBox[{
+         RowBox[{"NDSolve", "[", "]"}], "."}],
+        FontColor->RGBColor[0, 1, 0]]}]}]}]}], 
+   StyleBox["*)",
+    FontColor->RGBColor[0, 1, 0]]}], 
+  StyleBox["\[IndentingNewLine]",
+   FontColor->RGBColor[0, 1, 0]]}]], "Input",
+ CellChangeTimes->{{3.7553161929208527`*^9, 3.7553162259077926`*^9}, {
+   3.7553162755482273`*^9, 3.755316376980301*^9}, 3.755316570195464*^9, 
+   3.7553172359024067`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    StyleBox[
+     RowBox[{"Def", ".", " ", 
+      StyleBox[
+       RowBox[{
+       "Trajectory", " ", "as", " ", "a", " ", "function", " ", "of", " ", 
+        "unknown", " ", "parameter"}],
+       FontColor->GrayLevel[0]]}],
+     FontColor->RGBColor[1, 0, 1]], 
+    StyleBox[" ",
+     FontColor->RGBColor[1, 0, 1]], 
+    StyleBox[",",
+     FontColor->RGBColor[1, 0, 1]], 
+    RowBox[{
+     StyleBox[
+      RowBox[{
+       RowBox[{"i", ".", "e"}], " ", "the", " ", "shooting", " ", "slope"}],
+      FontColor->RGBColor[1, 0, 1]], "."}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"\[Omega]", "=", "20"}], ";", 
+    RowBox[{"T", "=", 
+     RowBox[{"2", 
+      RowBox[{"Pi", "/", "\[Omega]"}]}]}], ";", 
+    RowBox[{"deq", "=", " ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"x", "''"}], "[", "t", "]"}], "+", 
+       RowBox[{
+        RowBox[{"\[Omega]", "^", "2"}], " ", 
+        RowBox[{"x", "[", "t", "]"}]}]}], "\[Equal]", "0"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"xend", "[", "m_", "]"}], ":=", 
+     RowBox[{
+      RowBox[{"x", "[", "T", "]"}], "/.", 
+      RowBox[{
+       RowBox[{"NDSolve", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"deq", ",", 
+           RowBox[{
+            RowBox[{"x", "[", "0", "]"}], "==", "2"}], ",", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"x", "'"}], "[", "0", "]"}], "==", "m"}]}], "}"}], ",", 
+         "x", ",", 
+         RowBox[{"{", 
+          RowBox[{"t", ",", "0", ",", "T"}], "}"}]}], "]"}], "[", 
+       RowBox[{"[", "1", "]"}], "]"}]}]}], ";", 
+    RowBox[{"(*", 
+     RowBox[{"initial", " ", 
+      RowBox[{"conditions", "."}]}], "*)"}], "\[IndentingNewLine]", 
+    RowBox[{"Plot", "[", 
+     RowBox[{
+      RowBox[{"xend", "[", "m", "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"m", ",", 
+        RowBox[{"-", "0.1"}], ",", "0.1"}], "}"}]}], "]"}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Do", "[", 
+     RowBox[{
+      RowBox[{"if", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Abs", "[", 
+          RowBox[{
+           RowBox[{"xend", "[", "m", "]"}], "-", "2"}], "]"}], "<", 
+         "0.00001"}], ",", 
+        RowBox[{"slope", "=", "m"}], ",", 
+        RowBox[{"Print", "[", 
+         RowBox[{"\"\<m=\>\"", ",", "m"}], "]"}]}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"m", ",", 
+        RowBox[{"-", "0.1"}], ",", "0.1", ",", "0.001"}], "}"}]}], "]"}], ";", 
+    RowBox[{"(*", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Abs", "[", 
+        RowBox[{
+         RowBox[{"xend", "[", "m", "]"}], "-", "2"}], "]"}], "<", 
+       RowBox[{
+        RowBox[{"0.00001", "?"}], " ", ".", " ", 
+        RowBox[{"Ans", ":", " ", 
+         RowBox[{
+         "it", " ", "may", " ", "not", " ", "hit", " ", "the", " ", 
+          "target"}]}]}]}], ",", 
+      RowBox[{
+       RowBox[{"that", "'"}], "s", " ", "why", " ", "we", " ", "use", " ", 
+       "threashold", " ", 
+       RowBox[{"value", "."}]}]}], "  ", "*)"}], 
+    "\[IndentingNewLine]"}]}]}]], "Input",
+ CellChangeTimes->{{3.755316575007989*^9, 3.755316642030856*^9}, {
+   3.755316687786983*^9, 3.755316749270856*^9}, {3.755316900528591*^9, 
+   3.7553169051380205`*^9}, {3.7553169370953765`*^9, 3.755316985021792*^9}, {
+   3.755317026764949*^9, 3.7553170287024946`*^9}, {3.7553170712542443`*^9, 
+   3.7553170774283867`*^9}, {3.7553171257483525`*^9, 
+   3.7553172038373947`*^9}, {3.7553172387556725`*^9, 
+   3.7553172392400813`*^9}, {3.755317282561759*^9, 3.7553172851732664`*^9}, {
+   3.7553173226285253`*^9, 3.7553174227805104`*^9}, {3.7553175196261253`*^9, 
+   3.755317636873212*^9}, {3.7553176856744986`*^9, 3.755317686737011*^9}, 
+   3.7554208857567005`*^9, {3.755421105155681*^9, 3.7554211242205095`*^9}, {
+   3.7554211735379877`*^9, 3.7554211749129844`*^9}, 3.755421406984232*^9, 
+   3.7554258544623804`*^9, {3.755426767364063*^9, 3.755426854904866*^9}, {
+   3.7554269709512644`*^9, 3.755427010315173*^9}, {3.755427066884596*^9, 
+   3.755427070556564*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"shootSol", "=", 
+   RowBox[{
+    RowBox[{"x", "[", "t", "]"}], "/.", 
+    RowBox[{
+     RowBox[{"NDSolve", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"deq", ",", 
+         RowBox[{
+          RowBox[{"x", "[", "0", "]"}], "==", "2"}], ",", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"x", "'"}], "[", "0", "]"}], "\[Equal]", "slope"}]}], 
+        "}"}], ",", "x", ",", 
+       RowBox[{"{", 
+        RowBox[{"t", ",", "0", ",", "T"}], "}"}]}], "]"}], "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{"shootSol", ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", "T"}], "}"}]}], "]"}]}], "Input"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {}, 
+   {Hue[0.67, 0.6, 0.6], LineBox[CompressedData["
+1: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
+FVt2TUmqGa4W2VHtPob/AfXicK0=
+     "]]}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  Method->{},
+  PlotRange->
+   NCache[{{0, Rational[1, 10] Pi}, {-2.000006190792341, 
+     2.000005921823735}}, {{0, 0.3141592653589793}, {-2.000006190792341, 
+     2.000005921823735}}],
+  PlotRangeClipping->True,
+  PlotRangePadding->{
+    Scaled[0.02], 
+    Scaled[0.02]}]], "Output",
+ CellChangeTimes->{{3.7554210503827763`*^9, 3.7554210712133584`*^9}, {
+   3.755421107218176*^9, 3.755421115327651*^9}, 3.7554214122499437`*^9, 
+   3.755427025364029*^9}]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.755317119636552*^9, 3.7553171216366034`*^9}}]
+},
+WindowSize->{1350, 631},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+Magnification:>1.5 Inherited,
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (January 25, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 1815, 57, 104, "Input"],
+Cell[2375, 79, 8133, 225, 307, "Input"],
+Cell[10511, 306, 2302, 56, 162, "Input"],
+Cell[12816, 364, 2321, 73, 104, "Input"],
+Cell[15140, 439, 4089, 111, 249, "Input"],
+Cell[CellGroupData[{
+Cell[19254, 554, 724, 22, 75, "Input"],
+Cell[19981, 578, 8822, 153, 385, "Output"]
+}, Open  ]],
+Cell[28818, 734, 94, 1, 45, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
