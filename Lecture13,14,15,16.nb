@@ -1,0 +1,1431 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     59456,       1422]
+NotebookOptionsPosition[     54163,       1256]
+NotebookOutlinePosition[     55783,       1307]
+CellTagsIndexPosition[     55403,       1295]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{
+   RowBox[{"After", " ", "Quiz"}], "..."}], "*)"}]], "Input",
+ CellChangeTimes->{{3.7335354382845182`*^9, 3.733535448330072*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "Product"}]], "Input",
+ CellChangeTimes->{{3.7335354652829294`*^9, 3.7335354685158*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox["\<\"\\!\\(\\*RowBox[{\\\"Product\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"f\\\", \\\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{StyleBox[\\\"i\\\", \\\"TI\\\"], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], StyleBox[\\\"max\\\", \
+\\\"TI\\\"]]}], \\\"}\\\"}]}], \\\"]\\\"}]\\) evaluates the product \
+\\!\\(\\*RowBox[{UnderoverscriptBox[\\\"\[Product]\\\", \
+RowBox[{StyleBox[\\\"i\\\", \\\"TI\\\"], \\\"=\\\", \\\"1\\\"}], \
+SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], StyleBox[\\\"max\\\", \
+\\\"TI\\\"]], LimitsPositioning -> True], \\\" \\\", StyleBox[\\\"f\\\", \
+\\\"TI\\\"]}]\\). \\n\\!\\(\\*RowBox[{\\\"Product\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"f\\\", \\\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{StyleBox[\\\"i\\\", \\\"TI\\\"], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], StyleBox[\\\"min\\\", \
+\\\"TI\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], \
+StyleBox[\\\"max\\\", \\\"TI\\\"]]}], \\\"}\\\"}]}], \\\"]\\\"}]\\) starts \
+with \\!\\(\\*RowBox[{StyleBox[\\\"i\\\", \\\"TI\\\"], \\\"=\\\", \
+SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], StyleBox[\\\"min\\\", \
+\\\"TI\\\"]]}]\\). \\n\\!\\(\\*RowBox[{\\\"Product\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"f\\\", \\\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{StyleBox[\\\"i\\\", \\\"TI\\\"], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], StyleBox[\\\"min\\\", \
+\\\"TI\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], \
+StyleBox[\\\"max\\\", \\\"TI\\\"]], \\\",\\\", StyleBox[\\\"di\\\", \
+\\\"TI\\\"]}], \\\"}\\\"}]}], \\\"]\\\"}]\\) uses steps \
+\\!\\(\\*StyleBox[\\\"di\\\", \\\"TI\\\"]\\). \\n\\!\\(\\*RowBox[{\\\"Product\
+\\\", \\\"[\\\", RowBox[{StyleBox[\\\"expr\\\", \\\"TI\\\"], \\\",\\\", \
+RowBox[{\\\"{\\\", RowBox[{StyleBox[\\\"i\\\", \\\"TI\\\"], \\\",\\\", \
+RowBox[{\\\"{\\\", RowBox[{SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], \
+StyleBox[\\\"1\\\", \\\"TR\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"i\\\", \
+\\\"TI\\\"], StyleBox[\\\"2\\\", \\\"TR\\\"]], \\\",\\\", StyleBox[\\\"\
+\[Ellipsis]\\\", \\\"TR\\\"]}], \\\"}\\\"}]}], \\\"}\\\"}]}], \\\"]\\\"}]\\) \
+uses successive values \\!\\(\\*RowBox[{SubscriptBox[\\\"i\\\", \\\"1\\\"], \
+\\\",\\\", SubscriptBox[\\\"i\\\", \\\"2\\\"], \\\",\\\", \
+\\\"\[Ellipsis]\\\"}]\\).\\n\\!\\(\\*RowBox[{\\\"Product\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"f\\\", \\\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{StyleBox[\\\"i\\\", \\\"TI\\\"], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], StyleBox[\\\"min\\\", \
+\\\"TI\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], \
+StyleBox[\\\"max\\\", \\\"TI\\\"]]}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\
+\", RowBox[{StyleBox[\\\"j\\\", \\\"TI\\\"], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"j\\\", \\\"TI\\\"], StyleBox[\\\"min\\\", \
+\\\"TI\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"j\\\", \\\"TI\\\"], \
+StyleBox[\\\"max\\\", \\\"TI\\\"]]}], \\\"}\\\"}], \\\",\\\", StyleBox[\\\"\
+\[Ellipsis]\\\", \\\"TR\\\"]}], \\\"]\\\"}]\\) evaluates the multiple product \
+\\!\\(\\*RowBox[{UnderoverscriptBox[\\\"\[Product]\\\", \
+RowBox[{StyleBox[\\\"i\\\", \\\"TI\\\"], \\\"=\\\", \
+SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], StyleBox[\\\"min\\\", \
+\\\"TI\\\"]]}], SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], \
+StyleBox[\\\"max\\\", \\\"TI\\\"]], LimitsPositioning -> True], \
+RowBox[{UnderoverscriptBox[\\\"\[Product]\\\", RowBox[{StyleBox[\\\"j\\\", \\\
+\"TI\\\"], \\\"=\\\", SubscriptBox[StyleBox[\\\"j\\\", \\\"TI\\\"], StyleBox[\
+\\\"min\\\", \\\"TI\\\"]]}], SubscriptBox[StyleBox[\\\"j\\\", \\\"TI\\\"], \
+StyleBox[\\\"max\\\", \\\"TI\\\"]], LimitsPositioning -> True], \
+RowBox[{StyleBox[\\\"\[Ellipsis]\\\", \\\"TR\\\"], \\\" \\\", \
+StyleBox[\\\"f\\\", \\\"TI\\\"]}]}]}]\\). \"\>", "MSG"], " ", 
+  ButtonBox[
+   StyleBox["\[RightSkeleton]", "SR"],
+   Active->True,
+   BaseStyle->"Link",
+   ButtonData->"paclet:ref/Product"]}]], "Print", "PrintUsage",
+ CellChangeTimes->{3.733535469919339*^9},
+ CellTags->"Info3733553469-6842941"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Product", "[", 
+  RowBox[{
+   RowBox[{"Exp", "[", 
+    RowBox[{"i", " ", "x"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"i", ",", "1", ",", "10"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.733535485295186*^9, 3.7335355051812825`*^9}}],
+
+Cell[BoxData[
+ SuperscriptBox["\[ExponentialE]", 
+  RowBox[{"55", " ", "x"}]]], "Output",
+ CellChangeTimes->{3.733535506505971*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Product", "[", 
+   RowBox[{
+    RowBox[{"Exp", "[", 
+     RowBox[{"Sin", "[", "x", "]"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", "1", ",", "10"}], "}"}]}], "]"}], 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"terms", " ", "are", " ", "Multiplying"}], ",", 
+    RowBox[{"and", " ", "powers", " ", "are", " ", 
+     RowBox[{"added", "."}]}]}], "*)"}]}]], "Input",
+ CellChangeTimes->{{3.7335355298614893`*^9, 3.7335355841737137`*^9}, {
+  3.733535651922063*^9, 3.733535674599467*^9}}],
+
+Cell[BoxData[
+ SuperscriptBox["\[ExponentialE]", 
+  RowBox[{
+   RowBox[{"Sin", "[", "1", "]"}], "+", 
+   RowBox[{"Sin", "[", "2", "]"}], "+", 
+   RowBox[{"Sin", "[", "3", "]"}], "+", 
+   RowBox[{"Sin", "[", "4", "]"}], "+", 
+   RowBox[{"Sin", "[", "5", "]"}], "+", 
+   RowBox[{"Sin", "[", "6", "]"}], "+", 
+   RowBox[{"Sin", "[", "7", "]"}], "+", 
+   RowBox[{"Sin", "[", "8", "]"}], "+", 
+   RowBox[{"Sin", "[", "9", "]"}], "+", 
+   RowBox[{"Sin", "[", "10", "]"}]}]]], "Output",
+ CellChangeTimes->{3.733535535491415*^9, 3.733535675372202*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "Sum"}]], "Input",
+ CellChangeTimes->{{3.733535941300587*^9, 3.7335359428980093`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox["\<\"\\!\\(\\*RowBox[{\\\"Sum\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"f\\\", \\\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{StyleBox[\\\"i\\\", \\\"TI\\\"], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], StyleBox[\\\"max\\\", \
+\\\"TI\\\"]]}], \\\"}\\\"}]}], \\\"]\\\"}]\\) evaluates the sum \
+\\!\\(\\*RowBox[{UnderoverscriptBox[\\\"\[Sum]\\\", RowBox[{\\\"i\\\", \
+\\\"=\\\", \\\"1\\\"}], SubscriptBox[\\\"i\\\", StyleBox[\\\"max\\\", \
+FontSlant -> \\\"Italic\\\"]], LimitsPositioning -> True], \\\"f\\\"}]\\). \
+\\n\\!\\(\\*RowBox[{\\\"Sum\\\", \\\"[\\\", RowBox[{StyleBox[\\\"f\\\", \
+\\\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{StyleBox[\\\"i\\\", \\\"TI\
+\\\"], \\\",\\\", SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], \
+StyleBox[\\\"min\\\", \\\"TI\\\"]], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], StyleBox[\\\"max\\\", \
+\\\"TI\\\"]]}], \\\"}\\\"}]}], \\\"]\\\"}]\\) starts with \\!\\(\\*RowBox[{\\\
+\"i\\\", \\\"=\\\", SubscriptBox[\\\"i\\\", StyleBox[\\\"min\\\", FontSlant \
+-> \\\"Italic\\\"]]}]\\). \\n\\!\\(\\*RowBox[{\\\"Sum\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"f\\\", \\\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{StyleBox[\\\"i\\\", \\\"TI\\\"], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], StyleBox[\\\"min\\\", \
+\\\"TI\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], \
+StyleBox[\\\"max\\\", \\\"TI\\\"]], \\\",\\\", StyleBox[\\\"di\\\", \
+\\\"TI\\\"]}], \\\"}\\\"}]}], \\\"]\\\"}]\\) uses steps \
+\\!\\(\\*RowBox[{\\\"d\\\", \\\"\[InvisibleSpace]\\\", \\\"i\\\"}]\\). \\n\\!\
+\\(\\*RowBox[{\\\"Sum\\\", \\\"[\\\", RowBox[{StyleBox[\\\"expr\\\", \\\"TI\\\
+\"], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{StyleBox[\\\"i\\\", \\\"TI\\\"], \
+\\\",\\\", RowBox[{\\\"{\\\", RowBox[{SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\
+\\\"], StyleBox[\\\"1\\\", \\\"TR\\\"]], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], StyleBox[\\\"2\\\", \
+\\\"TR\\\"]], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\"TR\\\"]}], \\\"}\\\
+\"}]}], \\\"}\\\"}]}], \\\"]\\\"}]\\) uses successive values \
+\\!\\(\\*RowBox[{SubscriptBox[\\\"i\\\", \\\"1\\\"], \\\",\\\", SubscriptBox[\
+\\\"i\\\", \\\"2\\\"], \\\",\\\", \
+\\\"\[Ellipsis]\\\"}]\\).\\n\\!\\(\\*RowBox[{\\\"Sum\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"f\\\", \\\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{StyleBox[\\\"i\\\", \\\"TI\\\"], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], StyleBox[\\\"min\\\", \
+\\\"TI\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], \
+StyleBox[\\\"max\\\", \\\"TI\\\"]]}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\
+\", RowBox[{StyleBox[\\\"j\\\", \\\"TI\\\"], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"j\\\", \\\"TI\\\"], StyleBox[\\\"min\\\", \
+\\\"TI\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"j\\\", \\\"TI\\\"], \
+StyleBox[\\\"max\\\", \\\"TI\\\"]]}], \\\"}\\\"}], \\\",\\\", StyleBox[\\\"\
+\[Ellipsis]\\\", \\\"TR\\\"]}], \\\"]\\\"}]\\) evaluates the multiple sum \\!\
+\\(\\*RowBox[{UnderoverscriptBox[\\\"\[Sum]\\\", RowBox[{\\\"i\\\", \
+\\\"=\\\", SubscriptBox[\\\"i\\\", StyleBox[\\\"min\\\", FontSlant -> \
+\\\"Italic\\\"]]}], SubscriptBox[\\\"i\\\", StyleBox[\\\"max\\\", FontSlant \
+-> \\\"Italic\\\"]], LimitsPositioning -> True], \
+RowBox[{UnderoverscriptBox[\\\"\[Sum]\\\", RowBox[{\\\"j\\\", \\\"=\\\", \
+SubscriptBox[\\\"j\\\", StyleBox[\\\"min\\\", FontSlant -> \
+\\\"Italic\\\"]]}], SubscriptBox[\\\"j\\\", StyleBox[\\\"max\\\", FontSlant \
+-> \\\"Italic\\\"]], LimitsPositioning -> True], RowBox[{\\\"\[Ellipsis]\\\", \
+\\\"f\\\"}]}]}]\\). \"\>", "MSG"], " ", 
+  ButtonBox[
+   StyleBox["\[RightSkeleton]", "SR"],
+   Active->True,
+   BaseStyle->"Link",
+   ButtonData->"paclet:ref/Sum"]}]], "Print", "PrintUsage",
+ CellChangeTimes->{3.7335359439629574`*^9},
+ CellTags->"Info3733553943-9954317"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{
+   RowBox[{
+   "Calculate", " ", "the", " ", "total", " ", "potential", " ", "energy", 
+    RowBox[{"(", 
+     RowBox[{
+     "Use", " ", "Sum", " ", "command", " ", "bcz", " ", "of", "  ", "Total", 
+      " ", 
+      RowBox[{"energy", "."}]}], ")"}], " ", "of", " ", "charges"}], " ", "=", 
+   RowBox[{"k", " ", "q1", " ", 
+    RowBox[{"q2", "/", "r"}]}]}], " ", "*)"}]], "Input",
+ CellChangeTimes->{{3.7335355884474106`*^9, 3.7335356244190087`*^9}, 
+   3.7335359366962533`*^9, {3.733536114460579*^9, 3.7335361458293543`*^9}, {
+   3.7335364472736697`*^9, 3.7335364477574*^9}, {3.733795900098443*^9, 
+   3.733795922469273*^9}, {3.7337962343055663`*^9, 3.7337962461474085`*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.733795891970687*^9, 3.7337958944511347`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Sum", "[", 
+   RowBox[{
+    RowBox[{"9", " ", 
+     RowBox[{"10", "^", "9"}], " ", "0.0003", "  ", 
+     RowBox[{"n", "^", "2"}], " ", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"-", "1"}], ")"}], "^", 
+      RowBox[{"(", 
+       RowBox[{"n", "+", "1"}], ")"}]}], " ", "0.0003", " ", 
+     RowBox[{"m", "^", "2"}], "  ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"-", "1"}], ")"}], "^", 
+       RowBox[{"(", 
+        RowBox[{"m", "+", "1"}], ")"}]}], "/", 
+      RowBox[{"Abs", "[", 
+       RowBox[{
+        RowBox[{"m", "/", "20"}], "-", 
+        RowBox[{"n", "/", "20"}]}], "]"}]}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "1", ",", "19"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"m", ",", 
+      RowBox[{"n", "+", "1"}], ",", "20"}], "}"}]}], "]"}], 
+  RowBox[{"(*", 
+   RowBox[{"Discrete", " ", 
+    RowBox[{"sum", ".", "bcz"}], " ", "we", " ", "have", " ", "discretized", 
+    " ", "values", " ", "of", " ", 
+    RowBox[{"distance", "."}]}], "*)"}]}]], "Input",
+ CellChangeTimes->{{3.733535994093839*^9, 3.733536029836746*^9}, {
+  3.733536066516968*^9, 3.73353611167988*^9}, {3.7335361529216967`*^9, 
+  3.733536153124781*^9}, {3.7335363314568977`*^9, 3.733536339916379*^9}, {
+  3.733536451689658*^9, 3.733536469852947*^9}, {3.7335365034956026`*^9, 
+  3.7335365123275795`*^9}, {3.7335372143986597`*^9, 3.7335372341643667`*^9}, {
+  3.7335373958764143`*^9, 3.7335374244245973`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"-", "7.412007948524215`*^9"}]], "Output",
+ CellChangeTimes->{3.733537251090801*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{
+   RowBox[{"TOPIC", "::"}], ":", " ", 
+   RowBox[{"OPTIMIZATION", ":"}]}], "  ", "*)"}]], "Input",
+ CellChangeTimes->{{3.733537650847262*^9, 3.7335376707688446`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Continous", " ", "Commands"}], "=", "  ", 
+    RowBox[{
+     RowBox[{"Countable", " ", 
+      RowBox[{"Infinity", ":", " ", 
+       RowBox[{"jiska", " ", "start", " ", "likh", " ", "sakty", " ", 
+        RowBox[{"hen", ".", " ", "like"}]}]}]}], " ", "=", "1"}]}], ",", "2", 
+   ",", "3", ",", 
+   RowBox[{
+    RowBox[{"...", "..."}], "\[IndentingNewLine]", "  ", "Uncountable", " ", 
+    RowBox[{"Infinity", ":", 
+     RowBox[{"Infinitesimel", " ", "no"}]}]}], ",", 
+   RowBox[{"jiska", " ", "start", " ", "b", " ", "ni", " ", "bta", " ", 
+    RowBox[{"sakty", "."}]}]}], "*)"}]], "Input",
+ CellChangeTimes->{{3.7335377844628115`*^9, 3.733537895987211*^9}, {
+  3.7335380396320114`*^9, 3.733538060473611*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"Max", " ", ",", 
+    RowBox[{"Min", " ", "are", " ", "the", " ", "Discrete", " ", 
+     RowBox[{"Commands", "."}]}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"?", "Min"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "to", " ", "graph", " ", "the", " ", "output", " ", "of", " ", "Min", " ",
+      "we", " ", "use", " ", "ListPlot", " ", "Command"}], 
+    "*)"}]}]}]], "Input",
+ CellChangeTimes->{{3.7335376296152534`*^9, 3.733537631159683*^9}, {
+  3.733795432533637*^9, 3.73379549382094*^9}, {3.7346374570304317`*^9, 
+  3.7346374742979712`*^9}, {3.735330332543454*^9, 3.7353303356684885`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox["\<\"\\!\\(\\*RowBox[{\\\"Min\\\", \\\"[\\\", \
+RowBox[{SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"1\\\", \
+\\\"TR\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], \
+StyleBox[\\\"2\\\", \\\"TR\\\"]], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\
+\"TR\\\"]}], \\\"]\\\"}]\\) yields the numerically smallest of the \
+\\!\\(\\*SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"i\\\", \\\
+\"TI\\\"]]\\). \\n\\!\\(\\*RowBox[{\\\"Min\\\", \\\"[\\\", RowBox[{RowBox[{\\\
+\"{\\\", RowBox[{SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"1\
+\\\", \\\"TR\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], \
+StyleBox[\\\"2\\\", \\\"TR\\\"]], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\
+\"TR\\\"]}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{SubscriptBox[StyleBox[\\\"y\\\", \\\"TI\\\"], StyleBox[\\\"1\\\", \
+\\\"TR\\\"]], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\"TR\\\"]}], \\\"}\\\
+\"}], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\"TR\\\"]}], \\\"]\\\"}]\\) \
+yields the smallest element of any of the lists. \"\>", "MSG"], " ", 
+  ButtonBox[
+   StyleBox["\[RightSkeleton]", "SR"],
+   Active->True,
+   BaseStyle->"Link",
+   ButtonData->"paclet:ref/Min"]}]], "Print", "PrintUsage",
+ CellChangeTimes->{3.7335376318460965`*^9},
+ CellTags->"Info3733555631-5117507"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "Max"}]], "Input",
+ CellChangeTimes->{{3.7346374814386816`*^9, 3.7346374854699965`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox["\<\"\\!\\(\\*RowBox[{\\\"Max\\\", \\\"[\\\", \
+RowBox[{SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"1\\\", \
+\\\"TR\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], \
+StyleBox[\\\"2\\\", \\\"TR\\\"]], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\
+\"TR\\\"]}], \\\"]\\\"}]\\) yields the numerically largest of the \
+\\!\\(\\*SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"i\\\", \\\
+\"TI\\\"]]\\). \\n\\!\\(\\*RowBox[{\\\"Max\\\", \\\"[\\\", RowBox[{RowBox[{\\\
+\"{\\\", RowBox[{SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"1\
+\\\", \\\"TR\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], \
+StyleBox[\\\"2\\\", \\\"TR\\\"]], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\
+\"TR\\\"]}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{SubscriptBox[StyleBox[\\\"y\\\", \\\"TI\\\"], StyleBox[\\\"1\\\", \
+\\\"TR\\\"]], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\"TR\\\"]}], \\\"}\\\
+\"}], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\"TR\\\"]}], \\\"]\\\"}]\\) \
+yields the largest element of any of the lists. \"\>", "MSG"], 
+  "\[NonBreakingSpace]", 
+  ButtonBox[
+   StyleBox["\[RightSkeleton]", "SR"],
+   Active->True,
+   BaseStyle->"Link",
+   ButtonData->"paclet:ref/Max"]}]], "Print", "PrintUsage",
+ CellChangeTimes->{3.734637486876241*^9},
+ CellTags->"Info3734655486-3210698"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.733537996388811*^9, 3.7335380181196113`*^9}, 
+   3.734637467124267*^9}],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Continous", " ", "Commands"}], "=", "Minimize"}], ",", " ", 
+   "FindMinimum"}], " ", "*)"}]], "Input",
+ CellChangeTimes->{{3.7335374747354755`*^9, 3.73353752698088*^9}, 
+   3.733537644575941*^9, 3.733538030802411*^9, {3.733538099114811*^9, 
+   3.733538117897211*^9}, {3.733538151437211*^9, 3.7335381521860113`*^9}, {
+   3.733538255333211*^9, 3.7335382635232115`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"?", 
+  "Minimize(* Symbolic CommAND,,,,,,combination of  D+Solve *)"}], "\
+\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "to", " ", "graph", " ", "the", " ", "output", " ", "of", " ", "Minimize", 
+    " ", "we", " ", "use", " ", "Plot", 
+    RowBox[{"(", 
+     RowBox[{"Numerical", " ", "command"}], ")"}], " ", "Command"}], " ", 
+   "*)"}]}]}], "Input",
+ CellChangeTimes->{{3.7335381220000114`*^9, 3.7335381246052113`*^9}, {
+   3.733538489899452*^9, 3.7335384941744275`*^9}, {3.7337955079399357`*^9, 
+   3.733795524539506*^9}, 3.73379555976679*^9, {3.733796124944945*^9, 
+   3.733796140779046*^9}, {3.7353286975388203`*^9, 3.735328716238377*^9}, {
+   3.735329155222746*^9, 3.7353291631447115`*^9}, 3.7353303881579075`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox["\<\"\\!\\(\\*RowBox[{\\\"Minimize\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"f\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"x\\\", \
+\\\"TI\\\"]}], \\\"]\\\"}]\\) minimizes \\!\\(\\*StyleBox[\\\"f\\\", \\\"TI\\\
+\"]\\) with respect to \\!\\(\\*StyleBox[\\\"x\\\", \
+\\\"TI\\\"]\\).\\n\\!\\(\\*RowBox[{\\\"Minimize\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"f\\\", \\\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"y\\\", \
+\\\"TI\\\"], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\"TR\\\"]}], \
+\\\"}\\\"}]}], \\\"]\\\"}]\\) minimizes \\!\\(\\*StyleBox[\\\"f\\\", \\\"TI\\\
+\"]\\) with respect to \\!\\(\\*StyleBox[\\\"x\\\", \\\"TI\\\"]\\), \
+\\!\\(\\*StyleBox[\\\"y\\\", \\\"TI\\\"]\\), \[Ellipsis]. \
+\\n\\!\\(\\*RowBox[{\\\"Minimize\\\", \\\"[\\\", RowBox[{RowBox[{\\\"{\\\", \
+RowBox[{StyleBox[\\\"f\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"cons\\\", \\\
+\"TI\\\"]}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"y\\\", \
+\\\"TI\\\"], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\"TR\\\"]}], \
+\\\"}\\\"}]}], \\\"]\\\"}]\\) minimizes \\!\\(\\*StyleBox[\\\"f\\\", \\\"TI\\\
+\"]\\) subject to the constraints \\!\\(\\*StyleBox[\\\"cons\\\", \\\"TI\\\"]\
+\\). \\n\\!\\(\\*RowBox[{\\\"Minimize\\\", \\\"[\\\", RowBox[{RowBox[{\\\"{\\\
+\", RowBox[{StyleBox[\\\"f\\\", \\\"TI\\\"], \\\",\\\", \
+StyleBox[\\\"cons\\\", \\\"TI\\\"]}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\
+\", RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"y\\\", \
+\\\"TI\\\"], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\"TR\\\"]}], \
+\\\"}\\\"}], \\\",\\\", StyleBox[\\\"dom\\\", \\\"TI\\\"]}], \\\"]\\\"}]\\) \
+minimizes with variables over the domain \\!\\(\\*StyleBox[\\\"dom\\\", \
+\\\"TI\\\"]\\), typically Reals or Integers.\"\>", "MSG"], 
+  "\[NonBreakingSpace]", 
+  ButtonBox[
+   StyleBox["\[RightSkeleton]", "SR"],
+   Active->True,
+   BaseStyle->"Link",
+   ButtonData->"paclet:ref/Minimize"]}]], "Print", "PrintUsage",
+ CellChangeTimes->{3.735329159129013*^9},
+ CellTags->"Info3735347158-4631127"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "FindMinimum(*combination of  D+FindRoot*)"}]], "Input",
+ CellChangeTimes->{{3.733538133902811*^9, 3.7335381372100115`*^9}, {
+  3.733538230591611*^9, 3.7335382358644114`*^9}, {3.733538399492811*^9, 
+  3.733538422175211*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox["\<\"\!\(\*RowBox[{\\\"FindMinimum\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"f\\\", \\\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"0\\\", \
+\\\"TR\\\"]]}], \\\"}\\\"}]}], \\\"]\\\"}]\) searches for a local minimum in \
+\!\(\*StyleBox[\\\"f\\\", \\\"TI\\\"]\), starting from the point \
+\!\(\*RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], \\\"=\\\", \
+SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"0\\\", \
+\\\"TR\\\"]]}]\). \\n\!\(\*RowBox[{\\\"FindMinimum\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"f\\\", \\\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"{\\\", RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], \
+\\\",\\\", SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"0\\\", \
+\\\"TR\\\"]]}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{StyleBox[\\\"y\\\", \\\"TI\\\"], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"y\\\", \\\"TI\\\"], StyleBox[\\\"0\\\", \
+\\\"TR\\\"]]}], \\\"}\\\"}], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \
+\\\"TR\\\"]}], \\\"}\\\"}]}], \\\"]\\\"}]\) searches for a local minimum in a \
+function of several variables. \\n\!\(\*RowBox[{\\\"FindMinimum\\\", \
+\\\"[\\\", RowBox[{RowBox[{\\\"{\\\", RowBox[{StyleBox[\\\"f\\\", \
+\\\"TI\\\"], \\\",\\\", StyleBox[\\\"cons\\\", \\\"TI\\\"]}], \\\"}\\\"}], \\\
+\",\\\", RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"{\\\", RowBox[{StyleBox[\\\"x\
+\\\", \\\"TI\\\"], \\\",\\\", SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], \
+StyleBox[\\\"0\\\", \\\"TR\\\"]]}], \\\"}\\\"}], \\\",\\\", \
+RowBox[{\\\"{\\\", RowBox[{StyleBox[\\\"y\\\", \\\"TI\\\"], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"y\\\", \\\"TI\\\"], StyleBox[\\\"0\\\", \
+\\\"TR\\\"]]}], \\\"}\\\"}], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \
+\\\"TR\\\"]}], \\\"}\\\"}]}], \\\"]\\\"}]\) searches for a local minimum \
+subject to the constraints \!\(\*StyleBox[\\\"cons\\\", \\\"TI\\\"]\).\\n\!\(\
+\*RowBox[{\\\"FindMinimum\\\", \\\"[\\\", RowBox[{RowBox[{\\\"{\\\", \
+RowBox[{StyleBox[\\\"f\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"cons\\\", \\\
+\"TI\\\"]}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"y\\\", \
+\\\"TI\\\"], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\"TR\\\"]}], \
+\\\"}\\\"}]}], \\\"]\\\"}]\) starts from a point within the region defined by \
+the constraints.\"\>", "MSG"], " ", 
+  ButtonBox[
+   StyleBox["\[RightSkeleton]", "SR"],
+   Active->True,
+   BaseStyle->"Link",
+   ButtonData->"paclet:ref/FindMinimum"]}]], "Print", "PrintUsage",
+ CellChangeTimes->{3.7335382370968113`*^9},
+ CellTags->"Info3733556237-4289073"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "FindRoot"}]], "Input",
+ CellChangeTimes->{{3.733538272306011*^9, 3.7335382767676115`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox["\<\"\\!\\(\\*RowBox[{\\\"FindRoot\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"f\\\", \\\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"0\\\", \
+\\\"TR\\\"]]}], \\\"}\\\"}]}], \\\"]\\\"}]\\) searches for a numerical root \
+of \\!\\(\\*StyleBox[\\\"f\\\", \\\"TI\\\"]\\), starting from the point \
+\\!\\(\\*RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], \\\"=\\\", \
+SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"0\\\", \
+\\\"TR\\\"]]}]\\).\\n\\!\\(\\*RowBox[{\\\"FindRoot\\\", \\\"[\\\", \
+RowBox[{RowBox[{StyleBox[\\\"lhs\\\", \\\"TI\\\"], \\\"==\\\", \
+StyleBox[\\\"rhs\\\", \\\"TI\\\"]}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"0\\\", \
+\\\"TR\\\"]]}], \\\"}\\\"}]}], \\\"]\\\"}]\\) searches for a numerical \
+solution to the equation \\!\\(\\*RowBox[{StyleBox[\\\"lhs\\\", \\\"TI\\\"], \
+\\\"==\\\", StyleBox[\\\"rhs\\\", \\\"TI\\\"]}]\\). \
+\\n\\!\\(\\*RowBox[{\\\"FindRoot\\\", \\\"[\\\", RowBox[{RowBox[{\\\"{\\\", \
+RowBox[{SubscriptBox[StyleBox[\\\"f\\\", \\\"TI\\\"], StyleBox[\\\"1\\\", \
+\\\"TR\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"f\\\", \\\"TI\\\"], \
+StyleBox[\\\"2\\\", \\\"TR\\\"]], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\
+\"TR\\\"]}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"{\
+\\\", RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"0\\\", \
+\\\"TR\\\"]]}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{StyleBox[\\\"y\\\", \\\"TI\\\"], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"y\\\", \\\"TI\\\"], StyleBox[\\\"0\\\", \
+\\\"TR\\\"]]}], \\\"}\\\"}], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \
+\\\"TR\\\"]}], \\\"}\\\"}]}], \\\"]\\\"}]\\) searches for a simultaneous \
+numerical root of all the \\!\\(\\*SubscriptBox[StyleBox[\\\"f\\\", \
+\\\"TI\\\"], StyleBox[\\\"i\\\", \
+\\\"TI\\\"]]\\).\\n\\!\\(\\*RowBox[{\\\"FindRoot\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"{\\\", RowBox[{SubscriptBox[StyleBox[\\\"eqn\\\", \
+\\\"TI\\\"], StyleBox[\\\"1\\\", \\\"TR\\\"]], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"eqn\\\", \\\"TI\\\"], StyleBox[\\\"2\\\", \
+\\\"TR\\\"]], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\"TR\\\"]}], \\\"}\\\
+\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"{\\\", \
+RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"0\\\", \
+\\\"TR\\\"]]}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{StyleBox[\\\"y\\\", \\\"TI\\\"], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"y\\\", \\\"TI\\\"], StyleBox[\\\"0\\\", \
+\\\"TR\\\"]]}], \\\"}\\\"}], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \
+\\\"TR\\\"]}], \\\"}\\\"}]}], \\\"]\\\"}]\\) searches for a numerical \
+solution to the simultaneous equations \\!\\(\\*SubscriptBox[StyleBox[\\\"eqn\
+\\\", \\\"TI\\\"], StyleBox[\\\"i\\\", \\\"TI\\\"]]\\). \"\>", "MSG"], " ", 
+  ButtonBox[
+   StyleBox["\[RightSkeleton]", "SR"],
+   Active->True,
+   BaseStyle->"Link",
+   ButtonData->"paclet:ref/FindRoot"]}]], "Print", "PrintUsage",
+ CellChangeTimes->{3.733538277610011*^9},
+ CellTags->"Info3733556277-4314936"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{"Lecture", " ", "14"}], " ", "*)"}]], "Input",
+ CellChangeTimes->{{3.7337942717393217`*^9, 3.7337942854065027`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{
+   RowBox[{"Question", ":", " ", 
+    RowBox[{
+     RowBox[{
+     "Find", " ", "numarically", " ", "the", " ", "work", " ", "done", " ", 
+      "by", " ", "a", " ", "spring", " ", "in", " ", "extension", " ", "from",
+       " ", "1"}], "-", 
+     RowBox[{
+     "4", "cm", " ", "with", " ", "such", " ", "a", " ", "spring", " ", 
+      "constant", " ", "that"}]}]}], ",", " ", 
+   RowBox[{
+    RowBox[{"Magnitude", " ", "of", " ", "force", " ", "F"}], "=", 
+    RowBox[{
+     RowBox[{"5", "N", " ", "at", " ", "extension"}], "=", 
+     RowBox[{"3", 
+      RowBox[{"cm", "."}]}]}]}]}], "*)"}]], "Input",
+ CellChangeTimes->{{3.733794925895667*^9, 3.733795048533699*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"a", "=", 
+   RowBox[{"Solve", "[", 
+    RowBox[{"5", "\[Equal]", 
+     RowBox[{"k", " ", "3", " ", 
+      RowBox[{"10", "^", 
+       RowBox[{"-", "2"}]}]}]}], "]"}]}], ";", 
+  RowBox[{"b", "=", 
+   RowBox[{"k", "/.", 
+    RowBox[{"a", "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}]}], ";", 
+  RowBox[{"NIntegrate", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", "b"}], " ", "x"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", 
+      RowBox[{"1", " ", 
+       RowBox[{"10", "^", 
+        RowBox[{"-", "2"}]}]}], ",", 
+      RowBox[{"4", " ", 
+       RowBox[{"10", "^", 
+        RowBox[{"-", "2"}]}]}]}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.733794802539174*^9, 3.733794911495225*^9}}],
+
+Cell[BoxData[
+ RowBox[{"-", "0.1250000000000001`"}]], "Output",
+ CellChangeTimes->{3.733794916133979*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"Question", ":", 
+    RowBox[{
+    "Find", " ", "the", " ", "smallest", " ", "and", " ", "largest", " ", 
+     "of", " ", "given", " ", 
+     RowBox[{"values", "."}]}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Min", "[", 
+     RowBox[{"2.3", ",", "Pi", ",", "1", ",", 
+      RowBox[{
+       RowBox[{"-", "2"}], "/", "3"}], ",", 
+      RowBox[{"-", "0.01"}]}], "]"}], "//", "N"}], "\[IndentingNewLine]", 
+   "\"\< Largest no \>\"", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Max", "[", 
+     RowBox[{"2.3", ",", "Pi", ",", "1", ",", 
+      RowBox[{
+       RowBox[{"-", "2"}], "/", "3"}], ",", 
+      RowBox[{"-", "0.01"}]}], "]"}], "//", "N"}]}]}]], "Input",
+ CellChangeTimes->{{3.733795631469445*^9, 3.7337957166826534`*^9}, {
+  3.7337957621598597`*^9, 3.73379578189497*^9}, {3.733795940550021*^9, 
+  3.7337959516418343`*^9}, {3.7337966504581394`*^9, 3.7337966625486045`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"-", "0.6666666666666666`"}]], "Output",
+ CellChangeTimes->{
+  3.7337957204425187`*^9, 3.733795783860608*^9, {3.7337959441068897`*^9, 
+   3.7337959525154514`*^9}, 3.7337966538278694`*^9}],
+
+Cell[BoxData["\<\" Largest no \"\>"], "Output",
+ CellChangeTimes->{
+  3.7337957204425187`*^9, 3.733795783860608*^9, {3.7337959441068897`*^9, 
+   3.7337959525154514`*^9}, 3.7337966538434696`*^9}],
+
+Cell[BoxData["3.141592653589793`"], "Output",
+ CellChangeTimes->{
+  3.7337957204425187`*^9, 3.733795783860608*^9, {3.7337959441068897`*^9, 
+   3.7337959525154514`*^9}, 3.7337966538434696`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{
+   RowBox[{
+   "Find", " ", "the", " ", "\"\< Least \>\"", " ", "potential", " ", 
+    "energy", " ", "amongst", " ", "those", " ", "generated", " ", "by", "  ",
+     "charge"}], " ", "=", 
+   RowBox[{"k", " ", "q1", " ", 
+    RowBox[{"q2", "/", "r"}]}]}], " ", "*)"}]], "Input",
+ CellChangeTimes->{{3.7337961738668585`*^9, 3.733796182244112*^9}, {
+   3.7337965183990602`*^9, 3.733796559522242*^9}, 3.7346378744630623`*^9, {
+   3.734637923546033*^9, 3.73463793504378*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"a", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"9", " ", 
+      RowBox[{"10", "^", "9"}], " ", "0.0003", "  ", 
+      RowBox[{"n", "^", "2"}], " ", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"-", "1"}], ")"}], "^", 
+       RowBox[{"(", 
+        RowBox[{"n", "+", "1"}], ")"}]}], " ", "0.0003", " ", 
+      RowBox[{"m", "^", "2"}], "  ", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"-", "1"}], ")"}], "^", 
+        RowBox[{"(", 
+         RowBox[{"m", "+", "1"}], ")"}]}], "/", 
+       RowBox[{"Abs", "[", 
+        RowBox[{
+         RowBox[{"m", "/", "20"}], "-", 
+         RowBox[{"n", "/", "20"}]}], "]"}]}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"n", ",", "1", ",", "19"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"m", ",", 
+       RowBox[{"n", "+", "1"}], ",", "20"}], "}"}]}], "]"}]}], ";", 
+  RowBox[{"Min", "[", "a", "]"}]}]], "Input",
+ CellChangeTimes->{{3.7337962712040596`*^9, 3.733796273653558*^9}, {
+  3.7337963280417814`*^9, 3.733796358371875*^9}}],
+
+Cell[BoxData[
+ RowBox[{"-", "2.33928`*^9"}]], "Output",
+ CellChangeTimes->{3.7337963606497526`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{"Lecture", " ", "15"}], " ", "*)"}]], "Input",
+ CellChangeTimes->{{3.734060271026571*^9, 3.7340602718744516`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{
+  "Find", " ", "the", " ", "Local", " ", "min", " ", "of", " ", "given", " ", 
+   RowBox[{"eq", ".", " ", "near"}], " ", "1", " ", "and", " ", "verify", " ",
+    "it", " ", "satisfy", " ", "the", " ", "1", "st", " ", "and", " ", "2", 
+   "nd", " ", "Derivative", " ", 
+   RowBox[{"tests", "."}]}], "*)"}]], "Input",
+ CellChangeTimes->{{3.733797012216379*^9, 3.7337970355856285`*^9}, {
+  3.7337970691262736`*^9, 3.7337971301386657`*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.735328268876273*^9, 3.7353282913160787`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{"f", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"FindMinimum", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"3", 
+         RowBox[{"x", "^", "3"}]}], "-", 
+        RowBox[{"4", "x"}], "+", 
+        RowBox[{"Sin", "[", "x", "]"}]}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", "1"}], "}"}]}], "]"}], "\[IndentingNewLine]", "j"}],
+     "=", 
+    RowBox[{"x", "/.", 
+     RowBox[{"f", "[", 
+      RowBox[{"[", "2", "]"}], "]"}]}]}]}], "*)"}]], "Input",
+ CellChangeTimes->{
+  3.7353279079974146`*^9, {3.735327966285921*^9, 3.735327974928483*^9}, {
+   3.7353282412486315`*^9, 3.7353282623293715`*^9}, 3.735328293581785*^9, {
+   3.735328332648226*^9, 3.7353283379781704`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", "   ", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"-", "1.1875668063698543`"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", "\[Rule]", "0.5935821201095499`"}], "}"}]}], "}"}], "  ", 
+  "*)"}]], "Input",
+ CellChangeTimes->{{3.735328316255653*^9, 3.7353283568533545`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "a", "]"}]], "Input",
+ CellChangeTimes->{{3.7353279357209063`*^9, 3.7353279415803766`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "Sign"}]], "Input",
+ CellChangeTimes->{{3.7346385712766557`*^9, 3.7346385737475715`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox["\<\"\\!\\(\\*RowBox[{\\\"Sign\\\", \\\"[\\\", StyleBox[\\\"x\\\", \
+\\\"TI\\\"], \\\"]\\\"}]\\) gives \\!\\(\\*RowBox[{\\\"-\\\", \\\"1\\\"}]\\), \
+0, or 1 depending on whether \\!\\(\\*StyleBox[\\\"x\\\", \\\"TI\\\"]\\) is \
+negative, zero, or positive. \"\>", "MSG"], "\[NonBreakingSpace]", 
+  ButtonBox[
+   StyleBox["\[RightSkeleton]", "SR"],
+   Active->True,
+   BaseStyle->"Link",
+   ButtonData->"paclet:ref/Sign"]}]], "Print", "PrintUsage",
+ CellChangeTimes->{3.734638575247594*^9},
+ CellTags->"Info3734656574-3210698"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"a", "=", 
+   RowBox[{
+    RowBox[{"3", 
+     RowBox[{"x", "^", "3"}]}], "-", 
+    RowBox[{"4", "x"}], "+", 
+    RowBox[{"Sin", "[", "x", "]"}]}]}], ";", 
+  RowBox[{"b", "=", 
+   RowBox[{"x", "/.", 
+    RowBox[{
+     RowBox[{"FindMinimum", "[", 
+      RowBox[{"a", ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", "1"}], "}"}]}], "]"}], "[", 
+     RowBox[{"[", "2", "]"}], 
+     "]"}]}]}]}], "\[IndentingNewLine]", "\"\< First Derivative Test \>\"", "\
+\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"D", "[", 
+   RowBox[{"a", ",", "x"}], "]"}], "/.", 
+  RowBox[{
+  "x", "\[Rule]", 
+   "b"}]}], "\[IndentingNewLine]", "\"\< Second Derivative Test \>\"", "\
+\[IndentingNewLine]", 
+ RowBox[{"Sign", "[", 
+  RowBox[{
+   RowBox[{"D", "[", 
+    RowBox[{"a", ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "2"}], "}"}]}], "]"}], "/.", 
+   RowBox[{"x", "\[Rule]", "b"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.7337968002551007`*^9, 3.7337968334837418`*^9}, {
+   3.7340603864797*^9, 3.7340605355036125`*^9}, {3.734060624318364*^9, 
+   3.734060626069641*^9}, {3.734060994922434*^9, 3.7340610698497005`*^9}, {
+   3.7340611582864575`*^9, 3.7340612407666454`*^9}, {3.734061324956656*^9, 
+   3.734061350388405*^9}, 3.73532775594849*^9}],
+
+Cell[BoxData["0.5935821201095499`"], "Output",
+ CellChangeTimes->{
+  3.7340610813552866`*^9, {3.73406122065528*^9, 3.734061242202057*^9}, 
+   3.734061351152918*^9}],
+
+Cell[BoxData["\<\" First Derivative Test \"\>"], "Output",
+ CellChangeTimes->{
+  3.7340610813552866`*^9, {3.73406122065528*^9, 3.734061242202057*^9}, 
+   3.734061351152918*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"4.0610181883948826`*^-11", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"numerical", " ", "commands"}], " ", "=", " ", "FindMinimum"}], 
+    ",", "FindRoot", ",", ",", ",", ",", ",", ",", 
+    RowBox[{
+    "thatswhy", " ", "it", " ", "does", " ", "not", " ", "return", " ", "you",
+      " ", "exactly", " ", 
+     RowBox[{"zero", "."}]}]}], "*)"}]}]], "Input",
+ CellChangeTimes->{{3.7346389970993023`*^9, 3.73463899711488*^9}, {
+  3.7353285197827516`*^9, 3.7353285235327935`*^9}, {3.7353286584560547`*^9, 
+  3.7353286608310833`*^9}, {3.7353287771749525`*^9, 3.7353287795499816`*^9}}],
+
+Cell[BoxData["\<\" Second Derivative Test \"\>"], "Output",
+ CellChangeTimes->{
+  3.7340610813552866`*^9, {3.73406122065528*^9, 3.734061242202057*^9}, 
+   3.734061351215327*^9}],
+
+Cell[BoxData["1"], "Output",
+ CellChangeTimes->{
+  3.7340610813552866`*^9, {3.73406122065528*^9, 3.734061242202057*^9}, 
+   3.7340613512465315`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", "Optional", "*)"}]], "Input",
+ CellChangeTimes->{{3.734061312225179*^9, 3.7340613182788715`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"a", "=", 
+   RowBox[{
+    RowBox[{"3", 
+     RowBox[{"x", "^", "3"}]}], "-", 
+    RowBox[{"4", "x"}], "+", 
+    RowBox[{"Sin", "[", "x", "]"}]}]}], ";", 
+  RowBox[{"b", "=", 
+   RowBox[{"x", "/.", 
+    RowBox[{
+     RowBox[{"FindMinimum", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"3", 
+         RowBox[{"x", "^", "3"}]}], "-", 
+        RowBox[{"4", "x"}], "+", 
+        RowBox[{"Sin", "[", "x", "]"}]}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", "1"}], "}"}]}], "]"}], "[", 
+     RowBox[{"[", "2", "]"}], 
+     "]"}]}]}]}], "\[IndentingNewLine]", "\"\< First Derivative Test \>\"", "\
+\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"D", "[", 
+   RowBox[{"a", ",", "x"}], "]"}], "/.", 
+  RowBox[{
+  "x", "\[Rule]", 
+   "b"}]}], "\[IndentingNewLine]", "\"\< Second Derivative Test \>\"", "\
+\[IndentingNewLine]", 
+ RowBox[{"If", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Sign", "[", 
+     RowBox[{
+      RowBox[{"D", "[", 
+       RowBox[{"a", ",", 
+        RowBox[{"{", 
+         RowBox[{"x", ",", "2"}], "}"}]}], "]"}], "/.", 
+      RowBox[{"x", "\[Rule]", "b"}]}], "]"}], "\[Equal]", "1"}], ",", 
+   "\"\<Local Mini\>\"", ",", "\"\<Local max\>\""}], "]"}]}], "Input"],
+
+Cell[BoxData["0.5935821201095499`"], "Output",
+ CellChangeTimes->{3.7346388985846496`*^9}],
+
+Cell[BoxData["\<\" First Derivative Test \"\>"], "Output",
+ CellChangeTimes->{3.7346388986002483`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["4.061029290625129`*^-11"], "Input",
+ CellChangeTimes->{{3.7346389814410844`*^9, 3.7346390138981276`*^9}}],
+
+Cell[BoxData["\<\" Second Derivative Test \"\>"], "Output",
+ CellChangeTimes->{3.7346388986002483`*^9}],
+
+Cell[BoxData["\<\"Local Mini\"\>"], "Output",
+ CellChangeTimes->{3.7346388988815565`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"3", 
+     RowBox[{"x", "^", "3"}]}], "-", 
+    RowBox[{"4", "x"}], "+", 
+    RowBox[{"Sin", "[", "x", "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+   RowBox[{"PlotRange", "\[Rule]", "All"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7337972049879456`*^9, 3.7337972198236403`*^9}, {
+  3.733797363005803*^9, 3.7337973746594505`*^9}, {3.7337974341133375`*^9, 
+  3.7337974498543425`*^9}, {3.734060325259552*^9, 3.7340603747663813`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {}, 
+   {Hue[0.67, 0.6, 0.6], LineBox[CompressedData["
+1:eJwt2Xk01N//B3BKKi1KEtFm6UNZEhEtL4mSIoRkTyWpJFGiVZI2SZukRZKS
+FhRCXmjQMkWyZZ15v2fGzszbkjW/+z3n95fzON5z577vfb2e99wzS7yO2O2b
+ICYmli8uJva/v9og1z4+3oN734e8fGvJgiNDKpFDw8SwdrfwIwveZegu7e3v
+Qc22O0PD6sWwUt3KS9DRg05r3nQfliwBw9nhdeyaHnyRkNXwPb8UTGjRt/tv
+e/B2hZLzEbXvYHfpxys9jx704y/KsOCXw4my8MP787sx5mDfgMyaGqisnNZe
+uLsLWXP0hbHfuLCg4IisoVInuuZwf7bmCoAtsyrQeF4nzt+UGFn4QwAh+4Z/
+r5PpxP9o6lZUswCqpS7eMpvSicrW5smTJrZAtEOcjF1fBx4XDxrdv6UFJnaw
+Zh1md+CD8L2G479boG3u/BmJpzowUbMlKYLTCh8OsiZJN7ZjlETk9CM17bB6
+sZ/u85p2fGn9+VhaSzvkVM5zW1fRjrndoTmCv+1QsO7g+4Ol7XjnhZJIQ74D
+vknL7PmS1o4m+ous5zh1ACfDo+B8RDt2d+guCqzqAKnR4ZA+nXbs965sOFfS
+CZ7XdIV/wtowcK/GO9ewbgh5HxPx43Qb9rqF2l6P6oY7Db1KhcFtWPO8TT4j
+rhu+aWZueeHXhkfX/1BuSu8GvR/Giced27DQPcojneoGyZlmjnNWtuF0h/o9
+DiY9kHrDMW8btxUdA4Z/3O7tgZKsLDuThlacGF3l4/evB7jN8m16Na24//Cr
+rEcSQpBbUT9X8Ucrfl7yj3aTFsLZco8jbdmt+K7alolXFYLd7APKEdGt2PlT
+VLvQWgiDMaGRCK2Yo5m+3+ihEFqUCts3Gbfivmv2c/c9FUL1c0mrn/qtWDE1
+6MOVZCFk5Nyc3ajRit6fMys+pwnBj0qOG57TitOOtiV3FQuB1q1MXdXaguk1
++5jFXUL4Wa7561V0C+58PTNd2lAEec4BenpXW7D3s6frqTUieMXLupNzsQUl
+Yj3UaBBB5KCp89eQFhS+bpV/bCGCjYt30YK9LbjjAju1fJcIso9c7F9i1IJX
+cpg8xVARJM5sUojlCvDZxn9LXT6KIMYFJhs1CJD/et38sTwRhL140venWoAh
+mvLX7xeIwMt0T5kiW4AHYqsHCktFoHy8NfxxpgCLZk0YL68SwdNGpuf5VQFK
+Zu+QbBOK4Enq5JIPqwQo/zxQRkqFgeghnwzHFQKckrf03D81Bs5t+vbk7zIB
+lh3WvdelzoAn51qo0WIBBny9VJKrzcAiWRndT1ICbO38aC1vzMCjUKV4VjMf
+y4KNNH5vZyDeUjfg92U+rl3qvXTXCQZUp1l+Kw/n48pdnq2nTzLw6ruX8s+z
+fFxmeVTjUSgDOdtuV3wJ4qOZnozWr7MM/LH+uzJ/Nx9NfDp2ikcyILfjU+8L
+Iz5GXC1Xv3qPfN+c6q3P9fl4+sw8F5/7DKhVdicm6vCRSvdYsOEBA/oOi+0f
+qfHx4VZtR/4jBux2Xnh/azYf3/1xzRxMYuCGy5agM208lHTFBdsyyPhKXj9C
+eTzcTff8pN6T8RtC1E4287D5ldSSoEwG3rilVh2r4uGzaUap1z4ywPaQNjhQ
+yEPfCdKnLiEDU/ZWDey4z0P/b5bdqd/Ieqp2W9ve5mFKYpvmv+8MzONLJlvf
+4CFvvfOCrT8YWOq9eueWizzM3N8+r7aMAXOfB1nrj/LwoWDXzfxKBsIO7Q7W
+2MJDNn9aWH4jA01R7vE5G3moel3sD7eJAeM0l4Kt63kYubNXT4zDANPvMMVP
+j4cWkgYjWhQDu89axqYv4GHqCqrPSsBAXsLmvI3yPIzdE3JzSwsD8iwzTqUM
+DwcEVWtNWhkonwLqfyeT+W43Kl7YzoBJjF72GobGu1ZeRU+6yH6+X9HA7qQx
+J7N4OLCbgcFqLTH3FhrzFqRtM+th4J2iusW5Bhot5MJMK4WkPpKUalklNI7F
+5j742MtASKnCqEMhjWcEM0q8+xiobpNb3JJL43rPVFnpfgaitGf7TE2jUf+b
+jqrtAAP/siYNWj2gMTppTPfBIAPOdROUmu/QeCPa/dmSIQYyR8fBP5rG+U5l
+5onEfhuGL8VcpDFfx1QxdpiBb3v+vlI5R+Mh2X7baSNkvSP6yt6H0Mg+o/Dp
+JHHjt+55NUdodA2WN7AYZWB1V8caH18ar7ATN70gvi3d5jG0l0afFRNuThxj
+QKgruHDFg8Y48WtyzsTb7OlkRWcafz24X/uK+MVxzvdUexornS7UDhJL3G/s
+WbedxhPRCfM2/CPr31hj6GlGo0lxg9NnYnmxKhfRehr3+6S4jREHKlecDTOi
+UatiRvLKcbIfZmWJc/RpLLTxMNhDrLmfXfpMm0bvFX+n3yCOvPy1Y5UGjf65
+WpqZxLxXJdKlKjRuNXa5U0ts8vOzntNCGgN7a7YMEMcLC3a2ydN4YfmopbRY
+LwzK5IeGzKFxsdriOBVi+1W5j6fNpHH6kvjVesTvdmZ/jp9C40L3L/+tJ54e
+8qFFayKNZgpjPmbEPvHp03CMwivXY8bMiVn5b3VsBimc0scRmBIv5qbu4DIU
+Dl8wWbqGOHRiyomALgrfBkz9pE3sd99d0rOVwq67n3sXEnvpzLljRZPn9+xZ
+MI3YsbhUZU0ThXWU2JpeMn9Ll1Pp6n8oVFZ8b1VDvF60YoNcJYVDMnccs4h1
+L/HLJpZRKFOW63iLWHVBnLvoK4XpdibbDxLLZ1h3NbGIHxtvAOLpWyaeYiOF
+JzOLtKSJx5uypHJyKBS7K5xbT/aDCTx0P/kDhVVrGoafEguklqjfeUeh3LOH
+jd7EdU+qMsNeUSQPt+FS4h8GV8z9n1O4Ikk8gSL7/96r12trPIX5bg0+1v+r
+j8Fk0ep7ZL5qK23/kfp6EOV6bmkMhYdCu9alEIflFD8Uj6RQ806f+gCpz+M2
+IZo9YRReM/LXuEvsK9DObThNodnytJUriW1lYmuzjlHokEztcSf1bvZi2/4k
+Pwr9JSdGdZN+WL1efCDmAIU+rhbFIcSLfX3n+HmQ9Y1I8LhE+qm7cK216lYK
+p+cv8zpK+o3aKWqYvYlC72JpWYr0Y1VX0sFxEwrVf9fWWxPnKUhfrjOgcOaR
+42lKpH+vHuV+jlYm3+cYeuuyiIEzk+/anVlAIddCaU496f+Ah5bcg/IUVv/1
+SFMndv6a8W/TTAr7vmtbZ5P8UF8SYTQ2xEVpVvh/LzsYUMoy/tLex0Vfxeqc
+epI/0lY9jrU9XHx5LTJIingg2Ckwg8/FLb+O7HMlecUqX/b2wC8uPlfjWlXw
+SN6dK1OtfsHFkJuyBpNJXjr+eby+MZGLNft/Tp3QQOpnpb8T7xGx5oy1Q3Xk
+fODNusbc5qJmuGFBQy3Jbwu73pnnuThTc/beYJK/b6SrCjfv4qL6QS+xiSS/
+E32S6q3tufivsNOQ9ZWB2MKgfoftXGw4dazp/BcGzh+T09hrzsX88lunmGIG
+7Gt2Rp/T5SJe6VF4WcDAyKM6949TuRg16xoe+kDy5G9KcIEEF51G7b36yfnD
+swmNKR3nYGhEdHhIOgM/JyiVVPVzkP3n1NaQtww89XbTYrgcbOr7O779JQMW
+2pyRZTkcdP7e3GYfz8CdT/zYeF8Obo8P6vtOzk/34Lgzhvs4uLJ8fN6n02S9
+9bbvrfDgoO2EbtOU/523L7J1pjhwcOkiw/fB5HxuunW15BiQ8Wdv0BD4MfCf
+r26fpSwHgzY5XJBwI/upNfyICW1GvXUG6k4GJN8S9/iqH23GjIbTn9l6DNyV
+/7HK3bsZ3V01o9fpMpA78Qn7q00zXuseK5qjSZ6vMx9+otaMF5JXZsQsIc9H
+3HTYXtaE6Y9q6PppZD7N6tNTlZuw3dfnw7NGEZxaK/46Tr4JB6OOZVXViWDd
+/T9Wl2c2YVHg0esTa0VQYHflhvdwIzp9iPzoUCGC0uIOmSUVjVigMKJTWSKC
+yldvFO6eb0Rl/fhw47ci6D6h/985TgNqjg5veH9aBCqzTEztH9Uje7Eg/d5s
+EUSt4Ib43qrHukVW6z7OEMGgTVjGuch6XCRf5FYzVQTsmyzV1wH1mOZg6j11
+gggC52yZLLm5HhvdYnLNGCGUyNmxs3rq8GXGwmSFCiH4LtjrqLihDn3sZo6b
+3xBC+rJIX4quxZKKEq228R5oLk5bbGBQjZZzGzvSIrqAr3lnJWb+RuHvHX43
+O9ph9pmXBtriv5Aqjltr97MFNA16NJN62XhT0MdWTOHBBbOu8o/BpZipOsPW
+dxoX5tq/id41rwglP+X59z6ug/SBYukvqjk4fdKrQFXf35BUz7/eFv4Gn01Y
+aD2pvATcbJXe1++5jXW++wbqYt7AR6nQqqKgW8AKiy2cp/0aV1HiC887vYVl
+C4rKZA6Xooowd8i46CMcfhfxYLfyb9yS+OeHtVMRuFKRx76P1KG5lczE/g+l
+MC65RrJDn4s3PGrOrchig+hTXfSWCzwstV4ww0bmF7w4vONkPdWCXUvmnqmI
++w3RIz4nKXY7BgUu331DrhqyHr6ZuXN/F9Y0zLLz/lILd/f9K9zS2oOWV/fV
+BlbUQgm2TesV9mCeUY77hYZayLbTW3hvqAef3N1z8ImwFr6qZXzdP0mIPjaZ
+4XXyf2D+oxNF5+SEOPzZJcv6wB+QMKqo1FstRKVXz5UMpepgbPrQrHsnheh5
+cm3L5G31EGqoc1GuT4jL9n6p6nasB5M583SkBoXYa23PqtpdD88c7YOHR4QY
+oXooIfFEPTyavJ8unyjC1LIHLpBYD9sOyA7YzxGRnB8pOz5cD7RGcVO2rghj
+Kj5m8180gMCa2iQ4KELXT+bJ7IwG+PS8f+3BIyJUe/HrTkZ+A8itVUzuDBBh
+9um2gPOVDQA79St4J0XYpK6gtUCsEbQvFLilXBLhsrPBCfY7G2Gqu5Xi5aci
+/Lzc8MrnSU3wptg6+2qVCN117BNF0k0g873hvU+tCAdXHs1bNL8JriUpBJrW
+i1DT+FV3qHYTiBcZGnRyRHjbYtEO/Z1NYPZOM0W+U4Te+yYrJb1oAi9dbedK
+cQanPK55HbG1GeRk/qqULWPw6dO+kvcOzRBxp3GHqRaDa5/P5lAezbCcr6OS
+rsOg/+utMhDYDK4Gbx9c0mfwTy4e/xvfDG0n1lRNXc9gSm0y+HQ3g4Hyw2O+
+NgwunZrX+syCAzvKapNuBzDIlGr7PrXiwAp+esSNQAbzIxI6HttxQHl5kuSl
+4ww6SlzqjnPlQIJMSvPBEAYvjtv2RftzQPeh4p/pYQzy+lvGT8VyoFKFLfYq
+msF3753PhzzkgHecv+ORGAZPHfsxIfgpB67wrhqvuM2grCh90rFUDkQH/HuZ
+fI/BjZ2npx0o4MDqV1lTDj8i70vNmefQyoEF5rENNq8Y9EuIiLXr4pB7RWt8
+YyqDxp5DCjYMBzip0+u93zBY0diktHWUA3t3vGT7pTEo/uel8oZZXFBIlPWx
+z2LQswy0tVZz4Usn3g0qYlAzKv3tsnVcqAi4nPX1M4OD29R01U25MOXYBfP5
+xQze+Calr7KNC3tZzc/elZL1KK4yUvDkwpy7CvbpbAYX5B00nxTJhWerrl+d
+Uk3eR2F42O86F6ob/VnGNQxOPx75rjaGC5FuVh98ahkc1UlSTH3IBfq/hI9Z
+dQzWJTaJ7DK4ELzv4n/KzWT+YoeT87K5wNiJj+hyGPzqNuK6NJ8L+seqQ9dx
+GcyeJ/9l6AsXtjmtPbeZZvDuVdtHT5q4YJ5c4vdfC4NRrc07pHhcaNJouCTb
+SvbH3G9qYBsXUr6mbBwjDhy/Eri5jwtO+iqPCtsZtDvGsuyeSkHc/O0f53Yz
+aFluJ+YkTUH535GiZuINWtwPhbIUsH0L9yb1MLiiZWzxnUUUuKSaH1QRMTjT
+xfDvmlUU6B8V82jvZcg9tzg1yZiCoIb1Ejf7GByTtfeSNqHAlO4z0OtnsPOn
+/w/KkgIl1RPgO0DqZfl42DYbCnqmPpAZJ66PvL4604GCWop/+MZfBr+ZpiRe
+9qTgYtrjrKeDDBY9Xr2rdx8Fl8y8E9WGGPw4WjLT7SAZb9JEmWfELzLpkyuO
+U3BolV/ArWEGn8wJ0IkLJe+jd3u3xAiDsf5i/InnKZA7DT/9iS8tW2BTc5WC
+gKHK+WtHGTxz6dWkDTcpuJIqNxhHfJxnlJtyl4KIlGtW/cR+G774y8aT8d5Q
+ClvHGPR+5Lj0TAIFgwEsl3hi9xFefctzCnLeNM5uI3ZwOnbTNpX8f16dse4/
+Bs1kokdVsyhYvWE5J4N47ZGF6VF5FBTtqdnVTazHTt0/WEjeP3juBtVxBpdp
+rFngVUrBYq2btx2IlSO+VnxnU+C2fMAujHg+vTNyVQUF55SEISnEs00E6x7X
+UBCbvGzaT+IpDwN7pzRS0HDUdkIXsdjwhJcBFAUJC2d5TBbrRU/6T+/ZFgq2
+sL1/KRIXsN+tv95JQcGcqaBJvDjz0uU4EQVha6nnq4nPPXavTB6gIP5a4+QN
+xJzIVYs+jFCQaSHwJPcRNAmY7lskRoPk+5Z3//MTF/p92SQaXGf9GPjf8+Nm
+OeMNUjTIPDqva0zsrn3Tsl2ahkXxQg9yP8H8eT53/srSMNVi0nlyP8GF4sCR
+mE9DS2PKLSniM+1zl8ssomFvLPsuQ96n6Xdn0CJVGvLfOVyuJl7/6XOBpgYN
+Re66vuR+ho+ex00z1qbhR63l6hjifzeOOm7Wo6Fyx3XmALH7SYsE+9U02E/k
+3VtHnO+1qHP3Oho8FYz/m0G8cNuAwRFTGmJLQh7Xkv05s+rH+VObadA0vjn+
+mLhp4TP25W00NCT4bNpDvH5K6Lx7tjT0a3QGKBOP1am/TnOh4YD5s+DbpB5c
+WeN/8z1pUF/2dvtm4rzX1absfTTIV8hMGSD1depceK3gCA2H/kXLbyZuOOCi
+0hdIQ/yX835tpF7X7ljpJx5CQxz3RMIl4lE1zkSlcBqehC6OyyL17iqdZa1x
+mYZqg5duW4jzBq/fN4iiQfcDPVRN+uPU9zU6trE0pHvMz+aTfhrxv+cckUqD
+fq2Z1i/Sf87Ofkm30mhYryITu4E4Z6O58EkmDVKVbRWvSf+GyPVezC2gwTl+
+7/uTpL+Hc63ThJU03O9YO6WZ5IFzktro2B8a3sfIVGkR50SNbprWTMNynuWB
+YCGDJ3enNKi10eBz7QYtRvJkUFJyissYDfQ3JfHmDgb/2n5yL1bjQQOf0/WT
+x2DYn7eN65fzoIJ7aZBF8m7m7qeu2St44Ir5Qx8ocn75X3J+tYYHicm76iJJ
+XtpH2TretOXB0sD0LlE9OX++8a3cTvNAfJ+Levkvsn52tezqMB4ELE8fCCxn
+sPTPt602kTxYIBGVJFtG9rP17ZaNt3hg2GP72Izk+/TJIeYaL3kwbVtQg3cJ
+gwc2zlzXX8kDx5XBFhkfGez7JpbnV0fGUyw6OSmbwXN2vcatzTyw0Q4Psssk
+ebO7dnV9Ow8krLpKGtIZLDn7VL9QjA/tTjkp6eQ8U84z0LyuyYfzI0c2eMWT
+/NP3UFQL58MpRReJ0pMkX4ZWSV+8zIeFMXnlIScYFH6aPpEfxYfNJesPawQx
+KLE5p/3ZfT7YJB2afcKfQe1dc3NU3/Jh0lkO97c3mc/p706qdXxY3J9xJsaO
+rFeJ4V2VFQJIbxy8MH8pWZ8rM69cWCUA3rEfbDUVcp5u55+mjQXwuWwwd/li
+BrfXxuxLNBfAwMz5kf/NZzC4vUtfxUUAphmi9KYZDH6f+ey3coQALPs3aVv2
+idB/56zZyg0CiBtKujP9kwi9XujEqXEF0KEqyX7xUYQOQ9YqGgIB1F9cY2CS
+KULjB9dXrRAK4NHilgTPtyKc1CzlvF6iBTa1XM7enyDCOO9Jic6aLbDzl1H/
+9XARsoKG9W+daoH5q36u09sswswShfy751tg2Ukrjt5GEb6cZ7Q5LqIFzO+9
+uK0DIoz6eGJXQnQLyH5J15Y3FOGusb7Tb5+1wI1Du6TeLBVhd3hPyXd2Cyys
+GDvaISFChds8J4kFrbBxVl5M0ichrr6wSC5QuRVsvv/b/zRbiI4Bzr/p/1pB
+aYbZlvsZQoyxKbf6vLIVAm/5Lgt6KcTpM/JMwyxaIV/LYAP/thD/XbylKRbY
+CoMjejeTfIXIO2EqNvqtFUwD09Y9nC3ENy5PknuD2yDztMU7o7hu1K9RGZY8
+0wYCaeHvCVHdmGuXvG3+hTZgrleMF5zvxi9b3ohMrrdBtVHAfqUD3Ugb5q2J
+SmiD3wMmq7cbdqO8bG2Z+rc2+CO+SvT0VxeGsaUH3RTb4ZdlqEXvWCfuXHfW
+4sundsir3lKQq9+BDf0C6aKidtj2RMlMfGkHer2xrsktbQejtZEf1szrwEOL
+Fnq//dUOZ+R+O90Yascw8U8X7vLbYWdetXfap3Z8Uzycv3dGByjuuvijaWM7
+SlgfXyXu1gHLg000yze3YZr7YWXj0Q5oP71nV6xWCw5KbZz40aELjNRa1USj
+XLT7tcZgQWw3PBt/PaHudS3eV1byj+rvgVkjBYYpusU4fZqEQTaxus5LhVna
+xXimt2OES+x56m9n0LJi9GLlXlo10AMmsiX7N6gUo6a3y+MG4mwFjTc1ssWY
+/zLu57LBHhCe6T8tPshC3goFrdLhHrApWqRhmc9CRwXxXiEx+0SS4ZscFn4R
+b8ueP9IDrNooQ5ksFr6uyDbzIxazuTat7i0Ljwc6uc4d7YHbvToSBxJYODX7
+3tU9Y+Tzs6auDg9n4aknZ22vE7P2Fbi2nGNhd+T+eVnE5Tp1AZanWVixyzBR
+6l8PNFTqH5t1nIXxI9U5acTbNoazHuxn4Uxe/rl64sFFVoH/9rDwHPv5pknk
+3qpafWLubk8W7nt4vMKJ+NB5ZvnSXSysvegeG0act900IdKBhZZ+m9xTiQdf
+9k7usGVhnqO2ajXxk1OSnlbWLPz/3/Pg/3/Pw/8D+n+lFw==
+     "]]}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesOrigin->{0, 0},
+  PlotRange->{All, All},
+  PlotRangeClipping->True,
+  PlotRangePadding->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{
+  3.733797221165249*^9, {3.733797365767109*^9, 3.7337973755954866`*^9}, 
+   3.7337974505719705`*^9, {3.7340603386215286`*^9, 3.734060375881188*^9}}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Q", ":", " ", 
+      RowBox[{"Find", " ", "the", " ", "equilibrium", " ", "position", 
+       RowBox[{"(", 
+        RowBox[{
+        "Numarical", " ", "Value", " ", "of", " ", "independent", " ", 
+         "variable"}], ")"}], " ", "of", " ", "q"}]}], "=", 
+     RowBox[{"2.1", "micro", " ", "c"}]}], ",", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"b", "/", "t"}], " ", "Q1"}], "=", 
+     RowBox[{"Q2", "=", 
+      RowBox[{"4.1", " ", "micro", " ", "c"}]}]}], ",", "Q1", ",", 
+    RowBox[{"Q2", " ", "are", " ", "separated", " ", "by", " ", "3", 
+     RowBox[{"cm", ".", "Display"}], " ", 
+     RowBox[{"Energy", ".", "Using"}], " ", "energy", " ", "Considerations"}],
+     ",", 
+    RowBox[{
+     RowBox[{"make", " ", "sure", " ", "that", " ", "3", " ", "cm"}], ">", 
+     "x", ">", 
+     RowBox[{"0", " ", "."}]}]}], "*)"}], " "}]], "Input",
+ CellChangeTimes->{{3.734062718899972*^9, 3.73406294352995*^9}, {
+  3.7340635997489834`*^9, 3.734063600310583*^9}, {3.734063664130183*^9, 
+  3.734063667905383*^9}, {3.7340637220529833`*^9, 3.734063749259383*^9}, {
+  3.734063904635383*^9, 3.7340639052749834`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{
+   RowBox[{
+   "we", " ", "cant", " ", "use", " ", "FindMinimum", " ", "Command", " ", 
+    "bcz", " ", "we", " ", "dont", " ", "have", " ", "initial", " ", 
+    RowBox[{"value", ".", "if"}], " ", "we", " ", "add", " ", "a", " ", 
+    "constant", " ", "in", " ", "1", "st", " ", "derivative"}], ",", " ", 
+   RowBox[{"result", " ", "remains", " ", 
+    RowBox[{"same", "."}]}]}], "*)"}]], "Input",
+ CellChangeTimes->{{3.734063768525383*^9, 3.7340638530617833`*^9}, {
+  3.734639176028624*^9, 3.734639191231921*^9}}],
+
+Cell[BoxData[
+ RowBox[{"k", "=."}]], "Input",
+ CellChangeTimes->{{3.734064525031783*^9, 3.7340645262485833`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"k", "=", 
+  RowBox[{"Minimize", "[", " ", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"9", " ", 
+       RowBox[{"10", "^", "9"}], "  ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"4.1", " ", 
+          RowBox[{"10", "^", 
+           RowBox[{"-", "6"}]}], " ", "2.1", " ", 
+          RowBox[{
+           RowBox[{"10", "^", 
+            RowBox[{"-", "6"}]}], "/", "x"}]}], "+", 
+         RowBox[{"4.1", " ", 
+          RowBox[{"10", "^", 
+           RowBox[{"-", "6"}]}], " ", "2.1", " ", 
+          RowBox[{
+           RowBox[{"10", "^", 
+            RowBox[{"-", "6"}]}], "/", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"3", "/", "100"}], "-", "x"}], ")"}]}]}]}], ")"}]}], ",", 
+      RowBox[{
+       RowBox[{"3", "/", "100"}], ">", "x", ">", "0"}]}], "}"}], ",", "x"}], 
+   "]"}]}], "\[IndentingNewLine]", "\"\< Equilibrium Position \>\"", "\
+\[IndentingNewLine]", 
+ RowBox[{"x", "/.", 
+  RowBox[{"k", "[", 
+   RowBox[{"[", "2", "]"}], 
+   "]"}]}], "\[IndentingNewLine]", "\"\< Energy \>\"", "\[IndentingNewLine]", 
+ RowBox[{"k", "[", 
+  RowBox[{"[", "1", "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.7340638806113834`*^9, 3.734063886445783*^9}, {
+   3.734063958548983*^9, 3.7340641933289833`*^9}, {3.7340642723429832`*^9, 
+   3.7340642982545834`*^9}, {3.7340645183705835`*^9, 3.734064629723383*^9}, 
+   3.734639782916991*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{"10.332`", ",", 
+    RowBox[{"{", 
+     RowBox[{"x", "\[Rule]", "0.015000000000000003`"}], "}"}]}], "}"}], 
+  RowBox[{"(*", 
+   RowBox[{"just", " ", "to", " ", "see"}], "*)"}]}]], "Input",
+ CellChangeTimes->{{3.7346398143893757`*^9, 3.734639824920787*^9}}],
+
+Cell[BoxData["\<\" Equilibrium Position \"\>"], "Output",
+ CellChangeTimes->{{3.734064599396983*^9, 3.7340646305501833`*^9}, 
+   3.734639784760706*^9}],
+
+Cell[BoxData["0.015000000000000003`"], "Output",
+ CellChangeTimes->{{3.734064599396983*^9, 3.7340646305501833`*^9}, 
+   3.734639784760706*^9}],
+
+Cell[BoxData["\<\" Energy \"\>"], "Output",
+ CellChangeTimes->{{3.734064599396983*^9, 3.7340646305501833`*^9}, 
+   3.734639784760706*^9}],
+
+Cell[BoxData["10.332`"], "Output",
+ CellChangeTimes->{{3.734064599396983*^9, 3.7340646305501833`*^9}, 
+   3.7346397847763314`*^9}]
+}, Open  ]]
+},
+WindowSize->{1350, 633},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+ShowSelection->True,
+Magnification->2.,
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (January 25, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "Info3733553469-6842941"->{
+  Cell[864, 32, 4070, 63, 330, "Print",
+   CellTags->"Info3733553469-6842941"]},
+ "Info3733553943-9954317"->{
+  Cell[6641, 155, 3841, 60, 338, "Print",
+   CellTags->"Info3733553943-9954317"]},
+ "Info3733555631-5117507"->{
+  Cell[14639, 331, 1368, 23, 117, "Print",
+   CellTags->"Info3733555631-5117507"]},
+ "Info3734655486-3210698"->{
+  Cell[16163, 363, 1385, 24, 117, "Print",
+   CellTags->"Info3734655486-3210698"]},
+ "Info3735347158-4631127"->{
+  Cell[18925, 425, 2143, 35, 185, "Print",
+   CellTags->"Info3735347158-4631127"]},
+ "Info3733556237-4289073"->{
+  Cell[21360, 471, 2696, 43, 185, "Print",
+   CellTags->"Info3733556237-4289073"]},
+ "Info3733556277-4314936"->{
+  Cell[24215, 523, 3297, 53, 219, "Print",
+   CellTags->"Info3733556277-4314936"]},
+ "Info3734656574-3210698"->{
+  Cell[34655, 797, 560, 12, 166, "Print",
+   CellTags->"Info3734656574-3210698"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"Info3733553469-6842941", 54510, 1268},
+ {"Info3733553943-9954317", 54620, 1271},
+ {"Info3733555631-5117507", 54732, 1274},
+ {"Info3734655486-3210698", 54845, 1277},
+ {"Info3735347158-4631127", 54958, 1280},
+ {"Info3733556237-4289073", 55071, 1283},
+ {"Info3733556277-4314936", 55184, 1286},
+ {"Info3734656574-3210698", 55297, 1289}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[545, 20, 175, 4, 60, "Input"],
+Cell[CellGroupData[{
+Cell[745, 28, 116, 2, 60, "Input"],
+Cell[864, 32, 4070, 63, 330, "Print",
+ CellTags->"Info3733553469-6842941"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4971, 100, 267, 7, 60, "Input"],
+Cell[5241, 109, 131, 3, 59, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5409, 117, 532, 14, 99, "Input"],
+Cell[5944, 133, 543, 13, 59, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6524, 151, 114, 2, 60, "Input"],
+Cell[6641, 155, 3841, 60, 338, "Print",
+ CellTags->"Info3733553943-9954317"]
+}, Open  ]],
+Cell[10497, 218, 722, 15, 99, "Input"],
+Cell[11222, 235, 94, 1, 60, "Input"],
+Cell[CellGroupData[{
+Cell[11341, 240, 1465, 38, 137, "Input"],
+Cell[12809, 280, 107, 2, 59, "Output"]
+}, Open  ]],
+Cell[12931, 285, 212, 5, 60, "Input"],
+Cell[13146, 292, 779, 18, 175, "Input"],
+Cell[CellGroupData[{
+Cell[13950, 314, 686, 15, 137, "Input"],
+Cell[14639, 331, 1368, 23, 117, "Print",
+ CellTags->"Info3733555631-5117507"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16044, 359, 116, 2, 60, "Input"],
+Cell[16163, 363, 1385, 24, 117, "Print",
+ CellTags->"Info3734655486-3210698"]
+}, Open  ]],
+Cell[17563, 390, 120, 2, 60, "Input"],
+Cell[17686, 394, 439, 9, 60, "Input"],
+Cell[CellGroupData[{
+Cell[18150, 407, 772, 16, 137, "Input"],
+Cell[18925, 425, 2143, 35, 185, "Print",
+ CellTags->"Info3735347158-4631127"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21105, 465, 252, 4, 60, "Input"],
+Cell[21360, 471, 2696, 43, 185, "Print",
+ CellTags->"Info3733556237-4289073"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24093, 519, 119, 2, 60, "Input"],
+Cell[24215, 523, 3297, 53, 219, "Print",
+ CellTags->"Info3733556277-4314936"]
+}, Open  ]],
+Cell[27527, 579, 161, 3, 60, "Input"],
+Cell[27691, 584, 713, 18, 175, "Input"],
+Cell[CellGroupData[{
+Cell[28429, 606, 732, 24, 99, "Input"],
+Cell[29164, 632, 105, 2, 59, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[29306, 639, 968, 24, 175, "Input"],
+Cell[30277, 665, 210, 4, 118, "Output"],
+Cell[30490, 671, 194, 3, 118, "Output"],
+Cell[30687, 676, 192, 3, 118, "Output"]
+}, Open  ]],
+Cell[30894, 682, 518, 11, 198, "Input"],
+Cell[CellGroupData[{
+Cell[31437, 697, 1055, 31, 274, "Input"],
+Cell[32495, 730, 99, 2, 118, "Output"]
+}, Open  ]],
+Cell[32609, 735, 159, 3, 120, "Input"],
+Cell[32771, 740, 482, 9, 198, "Input"],
+Cell[33256, 751, 94, 1, 120, "Input"],
+Cell[33353, 754, 728, 21, 198, "Input"],
+Cell[34084, 777, 295, 8, 120, InheritFromParent],
+Cell[34382, 787, 128, 2, 120, "Input"],
+Cell[CellGroupData[{
+Cell[34535, 793, 117, 2, 120, "Input"],
+Cell[34655, 797, 560, 12, 166, "Print",
+ CellTags->"Info3734656574-3210698"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[35252, 814, 1263, 36, 426, "Input"],
+Cell[36518, 852, 164, 3, 118, "Output"],
+Cell[36685, 857, 176, 3, 118, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[36898, 865, 623, 13, 198, "Input"],
+Cell[37524, 880, 177, 3, 118, "Output"],
+Cell[37704, 885, 148, 3, 118, "Output"]
+}, Open  ]],
+Cell[37867, 891, 126, 2, 120, "Input"],
+Cell[CellGroupData[{
+Cell[38018, 897, 1222, 40, 426, "Input"],
+Cell[39243, 939, 90, 1, 118, "Output"],
+Cell[39336, 942, 102, 1, 118, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[39475, 948, 119, 1, 120, "Input"],
+Cell[39597, 951, 103, 1, 118, "Output"],
+Cell[39703, 954, 89, 1, 118, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[39829, 960, 564, 14, 120, "Input"],
+Cell[40396, 976, 9551, 161, 944, "Output"]
+}, Open  ]],
+Cell[49962, 1140, 1192, 28, 426, "Input"],
+Cell[51157, 1170, 560, 11, 274, "Input"],
+Cell[51720, 1183, 113, 2, 120, "Input"],
+Cell[51836, 1187, 1407, 38, 730, "Input"],
+Cell[CellGroupData[{
+Cell[53268, 1229, 307, 8, 120, "Input"],
+Cell[53578, 1239, 151, 2, 118, "Output"],
+Cell[53732, 1243, 142, 2, 118, "Output"],
+Cell[53877, 1247, 137, 2, 118, "Output"],
+Cell[54017, 1251, 130, 2, 118, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

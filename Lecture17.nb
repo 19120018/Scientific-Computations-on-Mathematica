@@ -1,0 +1,469 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     17804,        460]
+NotebookOptionsPosition[     15573,        385]
+NotebookOutlinePosition[     16568,        420]
+CellTagsIndexPosition[     16360,        412]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"equlibrium", " ", 
+    RowBox[{"w", ".", "r", ".", "t"}], " ", 
+    RowBox[{"Potential", ":", 
+     RowBox[{"where", " ", "potential", " ", "is", " ", 
+      RowBox[{"minimum", "."}]}]}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"?", "FindMinimum"}]}]], "Input",
+ CellChangeTimes->{{3.734399249012014*^9, 3.734399331155175*^9}, 
+   3.7343996511305714`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox["\<\"\\!\\(\\*RowBox[{\\\"FindMinimum\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"f\\\", \\\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"0\\\", \
+\\\"TR\\\"]]}], \\\"}\\\"}]}], \\\"]\\\"}]\\) searches for a local minimum in \
+\\!\\(\\*StyleBox[\\\"f\\\", \\\"TI\\\"]\\), starting from the point \
+\\!\\(\\*RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], \\\"=\\\", \
+SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"0\\\", \
+\\\"TR\\\"]]}]\\). \\n\\!\\(\\*RowBox[{\\\"FindMinimum\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"f\\\", \\\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"{\\\", RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], \
+\\\",\\\", SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"0\\\", \
+\\\"TR\\\"]]}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{StyleBox[\\\"y\\\", \\\"TI\\\"], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"y\\\", \\\"TI\\\"], StyleBox[\\\"0\\\", \
+\\\"TR\\\"]]}], \\\"}\\\"}], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \
+\\\"TR\\\"]}], \\\"}\\\"}]}], \\\"]\\\"}]\\) searches for a local minimum in \
+a function of several variables. \\n\\!\\(\\*RowBox[{\\\"FindMinimum\\\", \
+\\\"[\\\", RowBox[{RowBox[{\\\"{\\\", RowBox[{StyleBox[\\\"f\\\", \
+\\\"TI\\\"], \\\",\\\", StyleBox[\\\"cons\\\", \\\"TI\\\"]}], \\\"}\\\"}], \\\
+\",\\\", RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"{\\\", RowBox[{StyleBox[\\\"x\
+\\\", \\\"TI\\\"], \\\",\\\", SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], \
+StyleBox[\\\"0\\\", \\\"TR\\\"]]}], \\\"}\\\"}], \\\",\\\", \
+RowBox[{\\\"{\\\", RowBox[{StyleBox[\\\"y\\\", \\\"TI\\\"], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"y\\\", \\\"TI\\\"], StyleBox[\\\"0\\\", \
+\\\"TR\\\"]]}], \\\"}\\\"}], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \
+\\\"TR\\\"]}], \\\"}\\\"}]}], \\\"]\\\"}]\\) searches for a local minimum \
+subject to the constraints \\!\\(\\*StyleBox[\\\"cons\\\", \\\"TI\\\"]\\).\\n\
+\\!\\(\\*RowBox[{\\\"FindMinimum\\\", \\\"[\\\", RowBox[{RowBox[{\\\"{\\\", \
+RowBox[{StyleBox[\\\"f\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"cons\\\", \\\
+\"TI\\\"]}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"y\\\", \
+\\\"TI\\\"], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\"TR\\\"]}], \
+\\\"}\\\"}]}], \\\"]\\\"}]\\) starts from a point within the region defined \
+by the constraints.\"\>", "MSG"], " ", 
+  ButtonBox[
+   StyleBox["\[RightSkeleton]", "SR"],
+   Active->True,
+   BaseStyle->"Link",
+   ButtonData->"paclet:ref/FindMinimum"]}]], "Print", "PrintUsage",
+ CellChangeTimes->{3.7343993322648983`*^9},
+ CellTags->"Info3734417331-8379488"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{
+   RowBox[{"Question", ":", 
+    RowBox[{
+    "Find", " ", "where", " ", "a", " ", "charge", " ", "will", " ", "be", 
+     " ", "in", " ", "equlibrium", " ", "if", " ", "it", " ", "starts", " ", 
+     "from", " ", 
+     RowBox[{"(", 
+      RowBox[{"x", ",", "y", ",", "z"}], ")"}]}]}], "=", "1"}], " ", 
+  "*)"}]], "Input",
+ CellChangeTimes->{{3.7344002546567245`*^9, 3.734400299401578*^9}, 
+   3.73440033380046*^9, {3.7344003996497483`*^9, 3.7344004375275197`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"a", "=", 
+   RowBox[{"FindMinimum", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"0.5", 
+       RowBox[{"x", "^", "2"}], " ", 
+       RowBox[{"y", "^", "2"}]}], "+", 
+      RowBox[{"2.5", 
+       RowBox[{"y", "^", "2"}], " ", 
+       RowBox[{"z", "^", "2"}]}], "+", 
+      RowBox[{
+       RowBox[{"y", "^", "2"}], 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"z", "-", "1"}], ")"}], "^", "2"}]}], "+", "2.7"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"x", ",", "1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"y", ",", "1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"z", ",", "1"}], "}"}]}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", "\"\<The particle will start at  x=\>\"", "\
+\[IndentingNewLine]", 
+ RowBox[{"x", "/.", 
+  RowBox[{"a", "[", 
+   RowBox[{"[", "2", "]"}], 
+   "]"}]}], "\[IndentingNewLine]", "\"\<The particle will start at  y=\>\"", \
+"\[IndentingNewLine]", 
+ RowBox[{"y", "/.", 
+  RowBox[{"a", "[", 
+   RowBox[{"[", "2", "]"}], 
+   "]"}]}], "\[IndentingNewLine]", "\"\<The particle will start at  z=\>\"", \
+"\[IndentingNewLine]", 
+ RowBox[{"z", "/.", 
+  RowBox[{"a", "[", 
+   RowBox[{"[", "2", "]"}], "]"}]}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.734399342252404*^9, 3.734399342408703*^9}, {
+   3.7343993901736774`*^9, 3.7343994868289795`*^9}, 3.734399615616229*^9, {
+   3.734399824204213*^9, 3.7343998442565093`*^9}, {3.734399877822649*^9, 
+   3.7343999033990803`*^9}, {3.7343999827812066`*^9, 3.7344000199930587`*^9}}],
+
+Cell[BoxData["\<\"The particle will start at  x=\"\>"], "Output",
+ CellChangeTimes->{3.734399904865941*^9, 3.734400042100526*^9}],
+
+Cell[BoxData["0.8566937920876582`"], "Output",
+ CellChangeTimes->{3.734399904865941*^9, 3.7344000421161275`*^9}],
+
+Cell[BoxData["\<\"The particle will start at  y=\"\>"], "Output",
+ CellChangeTimes->{3.734399904865941*^9, 3.734400042131729*^9}],
+
+Cell[BoxData["2.65562904517298`*^-10"], "Output",
+ CellChangeTimes->{3.734399904865941*^9, 3.7344000421473308`*^9}],
+
+Cell[BoxData["\<\"The particle will start at  z=\"\>"], "Output",
+ CellChangeTimes->{3.734399904865941*^9, 3.7344000421629324`*^9}],
+
+Cell[BoxData["0.4164402384611662`"], "Output",
+ CellChangeTimes->{3.734399904865941*^9, 3.734400042178534*^9}]
+}, Open  ]],
+
+Cell[BoxData["\"\< OR \>\""], "Input",
+ CellChangeTimes->{{3.7344000630846777`*^9, 3.7344000704798365`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"x", ",", "y", ",", "z"}], "}"}], "/.", 
+    RowBox[{"a", "[", 
+     RowBox[{"[", "2", "]"}], "]"}]}], "\[IndentingNewLine]", 
+   "\"\<The particle will start at  x,y,z=\>\""}]}]], "Input",
+ CellChangeTimes->{{3.7344001054118185`*^9, 3.7344001393140955`*^9}, {
+  3.7353296127750034`*^9, 3.735329629746297*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{
+   RowBox[{"Topic", ":", 
+    RowBox[{"Calculus", " ", "of", " ", "Variations"}]}], "      ", ",", 
+   RowBox[{
+    RowBox[{"LeastAction", " ", 
+     RowBox[{"Principle", ".", " ", "I"}]}], "=", 
+    RowBox[{"Integrate", "[", 
+     RowBox[{
+      RowBox[{"L", "[", 
+       RowBox[{"q", ",", 
+        RowBox[{"q", "'"}], ",", "t"}], "]"}], ",", "t"}], "]"}]}], ",", " ", 
+   RowBox[{
+   "if", " ", "q", " ", "depends", " ", "on", " ", "another", " ", "variable",
+     " ", "Alpha", " ", "then", " ", "q", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"Alpha", ",", "t"}], ")"}], "."}]}]}], " ", "*)"}]], "Input",
+ CellChangeTimes->{{3.7344004445164986`*^9, 3.734400477823353*^9}, {
+   3.7344005242969446`*^9, 3.7344006569142923`*^9}, 3.7353297513477383`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"Question", ":", 
+     RowBox[{
+     "Prove", " ", "that", " ", "the", " ", "curve", " ", "of", "  ", 
+      "Minimal", " ", "length", " ", "from", " ", 
+      RowBox[{"(", 
+       RowBox[{"0", ",", "0"}], ")"}], " ", "to", " ", 
+      RowBox[{"(", 
+       RowBox[{"1", ",", "1"}], ")"}], " ", "is", " ", "a", " ", "straight", 
+      " ", 
+      RowBox[{"line", ".", "use"}], " ", "the", " ", "variation"}]}], " ", 
+    "=", 
+    RowBox[{
+     RowBox[{"a", " ", "x", 
+      RowBox[{"(", 
+       RowBox[{"1", "-", "x"}], ")"}], " ", "to", " ", "y"}], "=", "x"}]}], 
+   " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Sin", "[", "x", "]"}], "^", "2"}], "/.", 
+   RowBox[{"x", "\[Rule]", 
+    RowBox[{"Pi", "/", "4"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.734401050303163*^9, 3.7344010933000703`*^9}, {
+   3.7344012011979694`*^9, 3.734401223804108*^9}, 3.734401270295684*^9, {
+   3.7344013204845357`*^9, 3.7344015098265905`*^9}, {3.734402115271239*^9, 
+   3.734402152539878*^9}}],
+
+Cell[BoxData[
+ FractionBox["1", "2"]], "Output",
+ CellChangeTimes->{3.734402123445691*^9, 3.7344021549110928`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"a", "=."}]], "Input",
+ CellChangeTimes->{{3.73440231350171*^9, 3.7344023147341175`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "Minimize"}]], "Input",
+ CellChangeTimes->{{3.735329902520372*^9, 3.735329907911106*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox["\<\"\\!\\(\\*RowBox[{\\\"Minimize\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"f\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"x\\\", \
+\\\"TI\\\"]}], \\\"]\\\"}]\\) minimizes \\!\\(\\*StyleBox[\\\"f\\\", \\\"TI\\\
+\"]\\) with respect to \\!\\(\\*StyleBox[\\\"x\\\", \
+\\\"TI\\\"]\\).\\n\\!\\(\\*RowBox[{\\\"Minimize\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"f\\\", \\\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"y\\\", \
+\\\"TI\\\"], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\"TR\\\"]}], \
+\\\"}\\\"}]}], \\\"]\\\"}]\\) minimizes \\!\\(\\*StyleBox[\\\"f\\\", \\\"TI\\\
+\"]\\) with respect to \\!\\(\\*StyleBox[\\\"x\\\", \\\"TI\\\"]\\), \
+\\!\\(\\*StyleBox[\\\"y\\\", \\\"TI\\\"]\\), \[Ellipsis]. \
+\\n\\!\\(\\*RowBox[{\\\"Minimize\\\", \\\"[\\\", RowBox[{RowBox[{\\\"{\\\", \
+RowBox[{StyleBox[\\\"f\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"cons\\\", \\\
+\"TI\\\"]}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"y\\\", \
+\\\"TI\\\"], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\"TR\\\"]}], \
+\\\"}\\\"}]}], \\\"]\\\"}]\\) minimizes \\!\\(\\*StyleBox[\\\"f\\\", \\\"TI\\\
+\"]\\) subject to the constraints \\!\\(\\*StyleBox[\\\"cons\\\", \\\"TI\\\"]\
+\\). \\n\\!\\(\\*RowBox[{\\\"Minimize\\\", \\\"[\\\", RowBox[{RowBox[{\\\"{\\\
+\", RowBox[{StyleBox[\\\"f\\\", \\\"TI\\\"], \\\",\\\", \
+StyleBox[\\\"cons\\\", \\\"TI\\\"]}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\
+\", RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"y\\\", \
+\\\"TI\\\"], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\"TR\\\"]}], \
+\\\"}\\\"}], \\\",\\\", StyleBox[\\\"dom\\\", \\\"TI\\\"]}], \\\"]\\\"}]\\) \
+minimizes with variables over the domain \\!\\(\\*StyleBox[\\\"dom\\\", \
+\\\"TI\\\"]\\), typically Reals or Integers.\"\>", "MSG"], 
+  "\[NonBreakingSpace]", 
+  ButtonBox[
+   StyleBox["\[RightSkeleton]", "SR"],
+   Active->True,
+   BaseStyle->"Link",
+   ButtonData->"paclet:ref/Minimize"]}]], "Print", "PrintUsage",
+ CellChangeTimes->{3.7353299094267015`*^9},
+ CellTags->"Info3735347909-4631127"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Lp", "=", 
+   RowBox[{"Integr45ate", "[", 
+    RowBox[{
+     RowBox[{"Sqrt", "[", 
+      RowBox[{"1", "+", 
+       RowBox[{
+        RowBox[{"D", "[", 
+         RowBox[{
+          RowBox[{"x", "+", 
+           RowBox[{"a", " ", "x", 
+            RowBox[{"(", 
+             RowBox[{"1", "-", "x"}], ")"}]}]}], ",", "x"}], "]"}], "^", 
+        "2"}]}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0", ",", "1"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"s", "=", 
+  RowBox[{"NMinimize", "[", 
+   RowBox[{"Lp", ",", "a"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"s", "[", 
+  RowBox[{"[", "1", "]"}], "]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.7344019863672667`*^9, 3.7344020598596835`*^9}, {
+   3.734402099624338*^9, 3.7344021019955535`*^9}, {3.7344021855496893`*^9, 
+   3.7344022053774166`*^9}, {3.734402368304682*^9, 3.734402386213482*^9}, 
+   3.7344024260714817`*^9, {3.7353300728516865`*^9, 3.7353301252798386`*^9}, 
+   3.735330167096241*^9, {3.7353302181539145`*^9, 3.7353302257967978`*^9}, {
+   3.7358124238047037`*^9, 3.735812439416003*^9}, {3.735939416097894*^9, 
+   3.735939416175991*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1.4142135616857558`", ",", 
+   RowBox[{"{", 
+    RowBox[{"a", "\[Rule]", 
+     RowBox[{"-", "3.104740732252825`*^-7"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.735330255706729*^9}],
+
+Cell[BoxData["1.4142135623730951`"], "Output",
+ CellChangeTimes->{3.7344025431338816`*^9, 3.7353300527397957`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "Length"}]], "Input",
+ CellChangeTimes->{{3.7358095071924334`*^9, 3.735809513491756*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox["\<\"\\!\\(\\*RowBox[{\\\"Length\\\", \\\"[\\\", StyleBox[\\\"expr\
+\\\", \\\"TI\\\"], \\\"]\\\"}]\\) gives the number of elements in \
+\\!\\(\\*StyleBox[\\\"expr\\\", \\\"TI\\\"]\\). \"\>", "MSG"], 
+  "\[NonBreakingSpace]", 
+  ButtonBox[
+   StyleBox["\[RightSkeleton]", "SR"],
+   Active->True,
+   BaseStyle->"Link",
+   ButtonData->"paclet:ref/Length"]}]], "Print", "PrintUsage",
+ CellChangeTimes->{3.735809514913618*^9},
+ CellTags->"Info3735827514-1045684"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "NMinimize"}]], "Input",
+ CellChangeTimes->{{3.7358100779714084`*^9, 3.7358101000988684`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox["\<\"\!\(\*RowBox[{\\\"NMinimize\\\", \\\"[\\\", RowBox[{StyleBox[\
+\\\"f\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"x\\\", \\\"TI\\\"]}], \\\"]\\\
+\"}]\) minimizes \!\(\*StyleBox[\\\"f\\\", \\\"TI\\\"]\) numerically with \
+respect to \!\(\*StyleBox[\\\"x\\\", \
+\\\"TI\\\"]\).\\n\!\(\*RowBox[{\\\"NMinimize\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"f\\\", \\\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"y\\\", \
+\\\"TI\\\"], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\"TR\\\"]}], \
+\\\"}\\\"}]}], \\\"]\\\"}]\) minimizes \!\(\*StyleBox[\\\"f\\\", \
+\\\"TI\\\"]\) numerically with respect to \!\(\*StyleBox[\\\"x\\\", \
+\\\"TI\\\"]\), \!\(\*StyleBox[\\\"y\\\", \\\"TI\\\"]\), \!\(\*StyleBox[\\\"\
+\[Ellipsis]\\\", \\\"TR\\\"]\). \\n\!\(\*RowBox[{\\\"NMinimize\\\", \
+\\\"[\\\", RowBox[{RowBox[{\\\"{\\\", RowBox[{StyleBox[\\\"f\\\", \
+\\\"TI\\\"], \\\",\\\", StyleBox[\\\"cons\\\", \\\"TI\\\"]}], \\\"}\\\"}], \\\
+\",\\\", RowBox[{\\\"{\\\", RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], \
+\\\",\\\", StyleBox[\\\"y\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"\
+\[Ellipsis]\\\", \\\"TR\\\"]}], \\\"}\\\"}]}], \\\"]\\\"}]\) minimizes \
+\!\(\*StyleBox[\\\"f\\\", \\\"TI\\\"]\) numerically subject to the \
+constraints \!\(\*StyleBox[\\\"cons\\\", \\\"TI\\\"]\). \"\>", "MSG"], 
+  "\[NonBreakingSpace]", 
+  ButtonBox[
+   StyleBox["\[RightSkeleton]", "SR"],
+   Active->True,
+   BaseStyle->"Link",
+   ButtonData->"paclet:ref/NMinimize"]}]], "Print", "PrintUsage",
+ CellChangeTimes->{3.7358101013957024`*^9},
+ CellTags->"Info3735828101-1045684"]
+}, Open  ]]
+},
+WindowSize->{1350, 633},
+WindowMargins->{{0, Automatic}, {0, Automatic}},
+ShowSelection->True,
+Magnification->2.,
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (January 25, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "Info3734417331-8379488"->{
+  Cell[987, 34, 2724, 43, 185, "Print",
+   CellTags->"Info3734417331-8379488"]},
+ "Info3735347909-4631127"->{
+  Cell[9399, 244, 2145, 35, 185, "Print",
+   CellTags->"Info3735347909-4631127"]},
+ "Info3735827514-1045684"->{
+  Cell[13275, 333, 493, 12, 83, "Print",
+   CellTags->"Info3735827514-1045684"]},
+ "Info3735828101-1045684"->{
+  Cell[13930, 354, 1627, 28, 151, "Print",
+   CellTags->"Info3735828101-1045684"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"Info3734417331-8379488", 15920, 397},
+ {"Info3735347909-4631127", 16030, 400},
+ {"Info3735827514-1045684", 16142, 403},
+ {"Info3735828101-1045684", 16253, 406}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 417, 10, 99, "Input"],
+Cell[987, 34, 2724, 43, 185, "Print",
+ CellTags->"Info3734417331-8379488"]
+}, Open  ]],
+Cell[3726, 80, 507, 12, 99, "Input"],
+Cell[CellGroupData[{
+Cell[4258, 96, 1572, 43, 365, "Input"],
+Cell[5833, 141, 129, 1, 59, "Output"],
+Cell[5965, 144, 112, 1, 59, "Output"],
+Cell[6080, 147, 129, 1, 59, "Output"],
+Cell[6212, 150, 115, 1, 59, "Output"],
+Cell[6330, 153, 131, 1, 59, "Output"],
+Cell[6464, 156, 110, 1, 59, "Output"]
+}, Open  ]],
+Cell[6589, 160, 108, 1, 60, "Input"],
+Cell[6700, 163, 411, 10, 137, "Input"],
+Cell[7114, 175, 804, 20, 137, "Input"],
+Cell[CellGroupData[{
+Cell[7943, 199, 1067, 28, 137, "Input"],
+Cell[9013, 229, 114, 2, 81, "Output"]
+}, Open  ]],
+Cell[9142, 234, 112, 2, 60, "Input"],
+Cell[CellGroupData[{
+Cell[9279, 240, 117, 2, 60, "Input"],
+Cell[9399, 244, 2145, 35, 185, "Print",
+ CellTags->"Info3735347909-4631127"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11581, 284, 1187, 29, 175, "Input"],
+Cell[12771, 315, 230, 6, 64, "Output"],
+Cell[13004, 323, 114, 1, 59, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13155, 329, 117, 2, 60, "Input"],
+Cell[13275, 333, 493, 12, 83, "Print",
+ CellTags->"Info3735827514-1045684"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13805, 350, 122, 2, 60, "Input"],
+Cell[13930, 354, 1627, 28, 151, "Print",
+ CellTags->"Info3735828101-1045684"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

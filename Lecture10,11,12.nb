@@ -1,0 +1,993 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     39672,        984]
+NotebookOptionsPosition[     36044,        868]
+NotebookOutlinePosition[     37501,        915]
+CellTagsIndexPosition[     37170,        904]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Topic", ":", "Integration"}], ";", " ", 
+     RowBox[{
+      RowBox[{"Its", " ", "a", " ", "symbollic", " ", 
+       RowBox[{"command", ".", " ", "Non"}], " ", "numaricle", " ", 
+       "algorithm", " ", "of", " ", "Integration"}], "=", 
+      RowBox[{
+       RowBox[{"Anti", " ", 
+        RowBox[{"derivative", ".", "\[IndentingNewLine]", "Numaricle"}], " ", 
+        "methods"}], " ", "=", " ", "Simpsons"}]}]}], ",", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"trapedoidal", " ", "rule"}], "..."}], "..."}], " ", 
+     "Anti_Derivative", " ", "may", " ", 
+     RowBox[{"fail", "."}]}]}], "*)"}], "\[IndentingNewLine]", " ", 
+  RowBox[{"(*", 
+   RowBox[{"Question", ":", " ", 
+    RowBox[{"Inegrate", " ", 
+     RowBox[{"1", "/", "x"}], " ", 
+     RowBox[{"w", ".", "r", ".", "t"}], " ", 
+     RowBox[{"x", "."}]}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"?", "Integrate"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"gives", " ", "the", " ", "indefinite", " ", "integral", " ", 
+     RowBox[{"\[Integral]", 
+      RowBox[{"f", " ", 
+       RowBox[{"dx", "."}]}]}]}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"Integrate", "[", 
+    RowBox[{
+     RowBox[{"1", "/", "x"}], ",", "x"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.7329304496897125`*^9, 3.732930464981598*^9}, {
+  3.7329305077957225`*^9, 3.732930698588372*^9}, {3.732930788411482*^9, 
+  3.732930790604582*^9}, {3.7329309068075523`*^9, 3.732930918665957*^9}, {
+  3.7329316250980115`*^9, 3.7329316411699257`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox["\<\"\\!\\(\\*RowBox[{\\\"Integrate\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"f\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"x\\\", \
+\\\"TI\\\"]}], \\\"]\\\"}]\\) gives the indefinite integral \\!\\(\\*RowBox[{\
+\\\"\[Integral]\\\", \\\"f\\\", \\\" \\\", \\\"d\\\", \\\"x\\\"}]\\). \
+\\n\\!\\(\\*RowBox[{\\\"Integrate\\\", \\\"[\\\", RowBox[{StyleBox[\\\"f\\\", \
+\\\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{StyleBox[\\\"x\\\", \\\"TI\
+\\\"], \\\",\\\", SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], \
+StyleBox[\\\"min\\\", \\\"TI\\\"]], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"max\\\", \
+\\\"TI\\\"]]}], \\\"}\\\"}]}], \\\"]\\\"}]\\) gives the definite integral \\!\
+\\(\\*RowBox[{SubsuperscriptBox[\\\"\[Integral]\\\", SubscriptBox[\\\"x\\\", \
+StyleBox[\\\"min\\\", \\\"TI\\\"]], SubscriptBox[\\\"x\\\", \
+StyleBox[\\\"max\\\", \\\"TI\\\"]]], \\\" \\\", \\\"f\\\", \\\" \\\", \\\"d\\\
+\", \\\"x\\\"}]\\). \\n\\!\\(\\*RowBox[{\\\"Integrate\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"f\\\", \\\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"min\\\", \
+\\\"TI\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], \
+StyleBox[\\\"max\\\", \\\"TI\\\"]]}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\
+\", RowBox[{StyleBox[\\\"y\\\", \\\"TI\\\"], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"y\\\", \\\"TI\\\"], StyleBox[\\\"min\\\", \
+\\\"TI\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"y\\\", \\\"TI\\\"], \
+StyleBox[\\\"max\\\", \\\"TI\\\"]]}], \\\"}\\\"}], \\\",\\\", StyleBox[\\\"\
+\[Ellipsis]\\\", \\\"TR\\\"]}], \\\"]\\\"}]\\) gives the multiple integral \
+\\!\\(\\*RowBox[{SubsuperscriptBox[\\\"\[Integral]\\\", \
+SubscriptBox[\\\"x\\\", StyleBox[\\\"min\\\", \\\"TI\\\"]], \
+SubscriptBox[\\\"x\\\", StyleBox[\\\"max\\\", \\\"TI\\\"]]], \
+RowBox[{\\\"d\\\", \\\"x\\\", RowBox[{SubsuperscriptBox[\\\"\[Integral]\\\", \
+SubscriptBox[\\\"y\\\", StyleBox[\\\"min\\\", \\\"TI\\\"]], \
+SubscriptBox[\\\"y\\\", StyleBox[\\\"max\\\", \\\"TI\\\"]]], \
+RowBox[{\\\"d\\\", \\\"\[InvisibleSpace]\\\", \\\"y\\\", \\\" \\\", \\\"\
+\[Ellipsis]\\\", \\\" \\\", \\\"f\\\"}]}]}]}]\\). \"\>", "MSG"], " ", 
+  ButtonBox[
+   StyleBox["\[RightSkeleton]", "SR"],
+   Active->True,
+   BaseStyle->"Link",
+   ButtonData->"paclet:ref/Integrate"]}]], "Print", "PrintUsage",
+ CellChangeTimes->{3.732930792092757*^9},
+ CellTags->"Info3732948791-4634186"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "NIntegrate", 
+  RowBox[{"(*", 
+   RowBox[{
+   "NIntegrate", " ", "gives", " ", "a", " ", "numerical", " ", 
+    "approximation", " ", "to", " ", "the", " ", "integral", " ", 
+    RowBox[{
+     SubsuperscriptBox["\[Integral]", 
+      SubscriptBox["x", 
+       StyleBox["min",
+        FontSlant->"Italic"]], 
+      SubscriptBox["x", 
+       StyleBox["max",
+        FontSlant->"Italic"]]], " ", 
+     RowBox[{"f", " ", "d", "\[InvisibleSpace]", 
+      RowBox[{"x", ".", "\[IndentingNewLine]", "By"}], " ", "Reimann", " ", 
+      RowBox[{"Sum", ".", "This"}], " ", "method", " ", "will", " ", "Never", 
+      " ", 
+      RowBox[{"Fail", "."}]}]}]}], "*)"}]}]], "Input",
+ CellChangeTimes->{{3.732930801100132*^9, 3.732930806050272*^9}, {
+  3.732930852136702*^9, 3.732930886975662*^9}, {3.7329315506054707`*^9, 
+  3.732931566880234*^9}, {3.732931651281188*^9, 3.7329316687886515`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox["\<\"\!\(\*RowBox[{\\\"NIntegrate\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"f\\\", \\\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"min\\\", \
+\\\"TI\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], \
+StyleBox[\\\"max\\\", \\\"TI\\\"]]}], \\\"}\\\"}]}], \\\"]\\\"}]\) gives a \
+numerical approximation to the integral \!\(\*RowBox[{SubsuperscriptBox[\\\"\
+\[Integral]\\\", SubscriptBox[\\\"x\\\", StyleBox[\\\"min\\\", FontSlant -> \
+\\\"Italic\\\"]], SubscriptBox[\\\"x\\\", StyleBox[\\\"max\\\", FontSlant -> \
+\\\"Italic\\\"]]], \\\" \\\", RowBox[{\\\"f\\\", \\\" \\\", \\\"d\\\", \\\"\
+\[InvisibleSpace]\\\", \\\"x\\\"}]}]\). \\n\!\(\*RowBox[{\\\"NIntegrate\\\", \
+\\\"[\\\", RowBox[{StyleBox[\\\"f\\\", \\\"TI\\\"], \\\",\\\", \
+RowBox[{\\\"{\\\", RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"min\\\", \
+\\\"TI\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], \
+StyleBox[\\\"max\\\", \\\"TI\\\"]]}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\
+\", RowBox[{StyleBox[\\\"y\\\", \\\"TI\\\"], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"y\\\", \\\"TI\\\"], StyleBox[\\\"min\\\", \
+\\\"TI\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"y\\\", \\\"TI\\\"], \
+StyleBox[\\\"max\\\", \\\"TI\\\"]]}], \\\"}\\\"}], \\\",\\\", StyleBox[\\\"\
+\[Ellipsis]\\\", \\\"TR\\\"]}], \\\"]\\\"}]\) gives a numerical approximation \
+to the multiple integral \!\(\*RowBox[{SubsuperscriptBox[\\\"\[Integral]\\\", \
+SubscriptBox[\\\"x\\\", StyleBox[\\\"min\\\", FontSlant -> \\\"Italic\\\"]], \
+SubscriptBox[\\\"x\\\", StyleBox[\\\"max\\\", FontSlant -> \\\"Italic\\\"]]], \
+RowBox[{\\\"d\\\", \\\"x\\\", RowBox[{SubsuperscriptBox[\\\"\[Integral]\\\", \
+SubscriptBox[\\\"y\\\", StyleBox[\\\"min\\\", FontSlant -> \\\"Italic\\\"]], \
+SubscriptBox[\\\"y\\\", StyleBox[\\\"max\\\", FontSlant -> \\\"Italic\\\"]]], \
+RowBox[{\\\"d\\\", \\\"\[InvisibleSpace]\\\", \\\"y\\\", \\\" \\\", \\\"\
+\[Ellipsis]\\\", \\\" \\\", \\\"f\\\"}]}]}]}]\).\"\>", "MSG"], " ", 
+  ButtonBox[
+   StyleBox["\[RightSkeleton]", "SR"],
+   Active->True,
+   BaseStyle->"Link",
+   ButtonData->"paclet:ref/NIntegrate"]}]], "Print", "PrintUsage",
+ CellChangeTimes->{3.732930806943177*^9},
+ CellTags->"Info3732948806-8796545"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Log", "[", "x", "]"}], 
+  RowBox[{"(*", " ", 
+   RowBox[{"Constant", " ", 
+    RowBox[{"included", ".", " ", "we"}], " ", "have", " ", "solved", " ", 
+    "by", " ", "Indefinite", " ", 
+    RowBox[{"integral", "."}]}], "*)"}]}]], "Input",
+ CellChangeTimes->{{3.732930666985292*^9, 3.732930730309997*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{"Question", ":", 
+   RowBox[{
+    RowBox[{"Inegrate", " ", 
+     RowBox[{"1", "/", "x"}], " ", 
+     RowBox[{"w", ".", "r", ".", "t"}], " ", "x", " ", "from", " ", "1"}], 
+    "-", "4."}]}], "*)"}]], "Input",
+ CellChangeTimes->{{3.732930741118847*^9, 3.7329307523349867`*^9}, 
+   3.732930991131647*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Integrate", "[", 
+  RowBox[{
+   RowBox[{"1", "/", "x"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "1", ",", "4"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7329307570188217`*^9, 3.732930771367962*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Log", "[", "4", "]"}]], "Output",
+ CellChangeTimes->{3.732930775393867*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "Infinity"}]], "Input",
+ CellChangeTimes->{{3.7329311847043343`*^9, 3.732931187547775*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox["\<\"Infinity or \[Infinity] is a symbol that represents a \
+positive infinite quantity. \"\>", "MSG"], " ", 
+  ButtonBox[
+   StyleBox["\[RightSkeleton]", "SR"],
+   Active->True,
+   BaseStyle->"Link",
+   ButtonData->"paclet:ref/Infinity"]}]], "Print", "PrintUsage",
+ CellChangeTimes->{3.73293118832894*^9},
+ CellTags->"Info3732949188-1331655"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Question", ":", 
+      RowBox[{
+       RowBox[{"Integrate", " ", 
+        RowBox[{"exp", "[", 
+         RowBox[{"-", 
+          SuperscriptBox["ax", "2"]}], "]"}], 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"its", " ", "unit", " ", "comes", " ", "from", " ", "dx"}],
+            "=", "Meter"}], ",", ",", ",", ",", ",", 
+          RowBox[{
+           RowBox[{"exp", "[", 
+            RowBox[{"-", 
+             SuperscriptBox["ax", "2"]}], "]"}], "=", 
+           RowBox[{"Dimensionless", "."}]}]}], "  ", ")"}], " ", "from"}], 
+       " ", "-", "infinity"}]}], " ", "\[Rule]", 
+     RowBox[{"+", "Infinity"}]}], ",", 
+    RowBox[{
+     RowBox[{"For", " ", "a"}], "=", 
+     RowBox[{"+", "ve"}]}]}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Simplify", "[", 
+    RowBox[{
+     RowBox[{"Integrate", "[", 
+      RowBox[{
+       RowBox[{"Exp", "[", 
+        RowBox[{
+         RowBox[{"-", "a"}], " ", 
+         RowBox[{"x", "^", "2"}]}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", 
+         RowBox[{"-", "infinity"}], ",", "infinity"}], "}"}]}], "]"}], ",", 
+     RowBox[{"a", ">", "0"}]}], "]"}], 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"we", " ", 
+       RowBox[{"can", "'"}], "t", " ", "solve", " ", "this", " ", "by", " ", 
+       "a"}], "<", "0"}], ",", 
+     RowBox[{
+      RowBox[{"function", " ", "at", " ", "Infinity"}], " ", "=", 
+      RowBox[{
+       RowBox[{">", 
+        RowBox[{"infinity", ".", "     ", 
+         RowBox[{
+          SubsuperscriptBox["\[Integral]", 
+           SubscriptBox["x", 
+            StyleBox["min",
+             FontSlant->"Italic"]], 
+           SubscriptBox["x", 
+            StyleBox["max",
+             FontSlant->"Italic"]]], " ", 
+          RowBox[{"f", " ", "d", "\[InvisibleSpace]", "x"}]}]}]}], "=", 
+       RowBox[{"Area", " ", "under", " ", "the", " ", 
+        RowBox[{"curve", ".", "\[IndentingNewLine]", "whole"}], " ", 
+        "Calculus", " ", "was", " ", "invented", " ", "by", " ", "Leibniz", 
+        " ", "and", " ", 
+        RowBox[{"Newton", "."}]}]}]}]}], "*)"}], 
+   "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.7329310240655637`*^9, 3.7329311707839737`*^9}, {
+   3.7329312144510975`*^9, 3.732931223247015*^9}, {3.732931327521296*^9, 
+   3.732931334154866*^9}, {3.7329313919148245`*^9, 3.732931395441283*^9}, {
+   3.7329314781102157`*^9, 3.732931479140066*^9}, {3.732931754751326*^9, 
+   3.732931772552295*^9}, {3.7329319014494095`*^9, 3.732932014742696*^9}, {
+   3.732932089780139*^9, 3.732932153569766*^9}, 3.732932465458784*^9, {
+   3.732932612730782*^9, 3.7329326774967594`*^9}, {3.7331906682220345`*^9, 
+   3.733190676764204*^9}, {3.7340014257321043`*^9, 3.734001483637124*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox[
+   SqrtBox["\[Pi]"], 
+   SqrtBox["a"]], 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"its", " ", "unit", " ", "is", " ", 
+     RowBox[{"meter", ".", "bcz"}], " ", "unit", " ", "of", " ", "a"}], " ", 
+    "=", " ", 
+    RowBox[{
+     RowBox[{"1", "/", 
+      RowBox[{"m", "^", "2"}]}], " ", "From", " ", "given", " ", 
+     RowBox[{"expression", "."}]}]}], " ", "*)"}]}]], "Input",
+ CellChangeTimes->{
+  3.7329314536590614`*^9, 3.732931774268427*^9, {3.7329319050532866`*^9, 
+   3.7329319116369934`*^9}, {3.732932570011137*^9, 3.732932602713977*^9}, 
+   3.7329326593978596`*^9, 3.732933429865215*^9, {3.7340015581550245`*^9, 
+   3.7340015952685027`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{
+   RowBox[{
+   "No", " ", "of", " ", "Atoms", " ", "in", " ", "the", " ", "World"}], "=", 
+   " ", 
+   SuperscriptBox["10", 
+    RowBox[{"80", "     "}]]}], "*)"}]], "Input",
+ CellChangeTimes->{{3.732933138624172*^9, 3.7329331827418203`*^9}, 
+   3.7340016075113754`*^9}],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.7340016232232275`*^9, 3.734001623449388*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", "  ", 
+  RowBox[{"LECTURE", "\[Equal]", "11"}], "  ", "*)"}]], "Input",
+ CellChangeTimes->{{3.7331904547230024`*^9, 3.733190501329403*^9}, 
+   3.734001635118637*^9}],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.7340016268387613`*^9, 3.7340016272120266`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "Integrate"}]], "Input",
+ CellChangeTimes->{{3.7331906171716623`*^9, 3.733190630109619*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox["\<\"\!\(\*RowBox[{\\\"Integrate\\\", \\\"[\\\", RowBox[{StyleBox[\
+\\\"f\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"x\\\", \\\"TI\\\"]}], \\\"]\\\
+\"}]\) gives the indefinite integral \!\(\*RowBox[{\\\"\[Integral]\\\", \\\"f\
+\\\", \\\" \\\", \\\"d\\\", \\\"x\\\"}]\). \
+\\n\!\(\*RowBox[{\\\"Integrate\\\", \\\"[\\\", RowBox[{StyleBox[\\\"f\\\", \\\
+\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\
+\"], \\\",\\\", SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], \
+StyleBox[\\\"min\\\", \\\"TI\\\"]], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"max\\\", \
+\\\"TI\\\"]]}], \\\"}\\\"}]}], \\\"]\\\"}]\) gives the definite integral \!\(\
+\*RowBox[{SubsuperscriptBox[\\\"\[Integral]\\\", SubscriptBox[\\\"x\\\", \
+StyleBox[\\\"min\\\", \\\"TI\\\"]], SubscriptBox[\\\"x\\\", \
+StyleBox[\\\"max\\\", \\\"TI\\\"]]], \\\" \\\", \\\"f\\\", \\\" \\\", \\\"d\\\
+\", \\\"x\\\"}]\). \\n\!\(\*RowBox[{\\\"Integrate\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"f\\\", \\\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"min\\\", \
+\\\"TI\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], \
+StyleBox[\\\"max\\\", \\\"TI\\\"]]}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\
+\", RowBox[{StyleBox[\\\"y\\\", \\\"TI\\\"], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"y\\\", \\\"TI\\\"], StyleBox[\\\"min\\\", \
+\\\"TI\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"y\\\", \\\"TI\\\"], \
+StyleBox[\\\"max\\\", \\\"TI\\\"]]}], \\\"}\\\"}], \\\",\\\", StyleBox[\\\"\
+\[Ellipsis]\\\", \\\"TR\\\"]}], \\\"]\\\"}]\) gives the multiple integral \
+\!\(\*RowBox[{SubsuperscriptBox[\\\"\[Integral]\\\", SubscriptBox[\\\"x\\\", \
+StyleBox[\\\"min\\\", \\\"TI\\\"]], SubscriptBox[\\\"x\\\", \
+StyleBox[\\\"max\\\", \\\"TI\\\"]]], RowBox[{\\\"d\\\", \\\"x\\\", \
+RowBox[{SubsuperscriptBox[\\\"\[Integral]\\\", SubscriptBox[\\\"y\\\", \
+StyleBox[\\\"min\\\", \\\"TI\\\"]], SubscriptBox[\\\"y\\\", \
+StyleBox[\\\"max\\\", \\\"TI\\\"]]], RowBox[{\\\"d\\\", \\\"\[InvisibleSpace]\
+\\\", \\\"y\\\", \\\" \\\", \\\"\[Ellipsis]\\\", \\\" \\\", \\\"f\\\"}]}]}]}]\
+\). \"\>", "MSG"], " ", 
+  ButtonBox[
+   StyleBox["\[RightSkeleton]", "SR"],
+   Active->True,
+   BaseStyle->"Link",
+   ButtonData->"paclet:ref/Integrate"]}]], "Print", "PrintUsage",
+ CellChangeTimes->{3.7331906324322166`*^9},
+ CellTags->"Info3733208632-1756115"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"Question", ":", 
+     RowBox[{
+      RowBox[{"Integrate", " ", 
+       RowBox[{"exp", "[", 
+        RowBox[{
+         RowBox[{"-", "4"}], 
+         SuperscriptBox["x", "2"]}], "]"}], " ", "from"}], " ", "-", "k"}]}], 
+    "\[Rule]", "k"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"Integrate", "[", 
+      RowBox[{
+       RowBox[{"Exp", "[", 
+        RowBox[{
+         RowBox[{"-", "4"}], 
+         RowBox[{"x", "^", "2"}]}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", 
+         RowBox[{"-", "k"}], ",", "k"}], "}"}]}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"k", ",", "0.2", ",", "4", ",", "0.2"}], "}"}]}], "]"}], 
+   "\[IndentingNewLine]", "\"\<Exact\>\"", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Integrate", "[", 
+     RowBox[{
+      RowBox[{"Exp", "[", 
+       RowBox[{
+        RowBox[{"-", "4"}], 
+        RowBox[{"x", "^", "2"}]}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", 
+        RowBox[{"-", "Infinity"}], ",", "Infinity"}], "}"}]}], "]"}], "//", 
+    "N", 
+    RowBox[{"(*", " ", 
+     RowBox[{"Human", " ", 
+      RowBox[{"percetion", "."}]}], "*)"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.7331905741334705`*^9, 3.7331905949433165`*^9}, {
+  3.733190649095681*^9, 3.733190650436241*^9}, {3.7331906931782627`*^9, 
+  3.7331907020789537`*^9}, {3.7331908500580807`*^9, 3.733190875307357*^9}, {
+  3.733190934227534*^9, 3.7331909385319195`*^9}, {3.7331909822684126`*^9, 
+  3.7331909905976915`*^9}, {3.73319104015222*^9, 3.733191098769128*^9}, {
+  3.7331912306181765`*^9, 3.7331912422233143`*^9}, {3.7331915448480344`*^9, 
+  3.7331915564386854`*^9}, {3.733191640162812*^9, 3.7331916416291933`*^9}, {
+  3.7340018063491135`*^9, 3.7340018109315424`*^9}, {3.734001879457107*^9, 
+  3.7340018922654943`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "0.37965283970047525`", ",", "0.6576698563283956`", ",", 
+   "0.8067447581231186`", ",", "0.8652662259422945`", ",", 
+   "0.8820813907624215`", ",", "0.8856167458990027`", ",", 
+   "0.8861604467398811`", ",", "0.8862215852609789`", ",", 
+   "0.8862266100773917`", ",", "0.8862269117895689`", ",", 
+   "0.8862269250192414`", ",", "0.8862269254426973`", ",", 
+   "0.8862269254525873`", ",", "0.8862269254527558`", ",", 
+   "0.8862269254527579`", ",", "0.8862269254527579`", ",", 
+   "0.8862269254527579`", ",", "0.8862269254527579`", ",", 
+   "0.8862269254527579`", ",", "0.8862269254527579`"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.7331912221797123`*^9, 3.733191558747456*^9, 3.733191643079975*^9, {
+   3.7340018188351164`*^9, 3.7340018308274345`*^9}}],
+
+Cell[BoxData["\<\"Exact\"\>"], "Output",
+ CellChangeTimes->{
+  3.7331912221797123`*^9, 3.733191558747456*^9, 3.733191643079975*^9, {
+   3.7340018188351164`*^9, 3.7340018308334384`*^9}}],
+
+Cell[BoxData["0.8862269254527579`"], "Output",
+ CellChangeTimes->{
+  3.7331912221797123`*^9, 3.733191558747456*^9, 3.733191643079975*^9, {
+   3.7340018188351164`*^9, 3.7340018308404703`*^9}}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{"Limit", "[", 
+   RowBox[{
+    RowBox[{"Integrate", "[", 
+     RowBox[{
+      RowBox[{"Exp", "[", 
+       RowBox[{
+        RowBox[{"-", "4"}], 
+        RowBox[{"x", "^", "2"}]}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", 
+        RowBox[{"-", "k"}], ",", "k"}], "}"}]}], "]"}], ",", 
+    RowBox[{"k", "\[Rule]", "Infinity"}]}], "]"}], 
+  RowBox[{"(*", 
+   RowBox[{"Mathematica", " ", 
+    RowBox[{"percetion", "."}]}], "*)"}]}]], "Input",
+ CellChangeTimes->{{3.733191157339242*^9, 3.733191199781128*^9}, 
+   3.7331915787464*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"APPLICATONS", " ", "OF", " ", "INTEGRATION"}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+     RowBox[{" ", "1", ")"}], "=", 
+     RowBox[{
+     "Integration", " ", "is", " ", "the", " ", "general", " ", "form", " ", 
+      "of", " ", 
+      RowBox[{"multiplacation", "."}]}]}], ",", ",", ",", 
+    RowBox[{
+    "if", " ", "Force", " ", "is", " ", "variable", " ", "then", " ", "we", 
+     " ", "use", " ", 
+     RowBox[{"Integration", "."}]}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+    "Calculate", " ", "the", " ", "work", " ", "done", " ", "by", " ", 
+     "electrostatic", " ", "force", 
+     RowBox[{"(", "Variable", " ", ")"}], " ", 
+     RowBox[{"b", "/", "t"}], " ", "q1", " ", "and", " ", "q2", " ", "moved", 
+     " ", "along", " ", "the", " ", "force", " ", "from", " ", "mutual", " ", 
+     "separation", " ", "ra", " ", "to", " ", "rb"}], " ", ",", 
+    RowBox[{"if", " ", "ra"}], ",", 
+    RowBox[{"rb", ">", 
+     RowBox[{"0", " ", "."}]}]}], "*)"}]}]], "Input",
+ CellChangeTimes->{{3.7331916569637966`*^9, 3.7331916709412174`*^9}, {
+  3.7331917046523857`*^9, 3.733191824568048*^9}, {3.733191872319252*^9, 
+  3.7331919671039305`*^9}, {3.7331920072240443`*^9, 3.7331920167705097`*^9}, {
+  3.73319228839357*^9, 3.7331922913574753`*^9}, {3.73319251259492*^9, 
+  3.7331925386611614`*^9}, {3.7334534746208544`*^9, 3.7334534777388544`*^9}, {
+  3.7334546202278547`*^9, 3.7334546268508544`*^9}, {3.7340020026144967`*^9, 
+  3.73400202745426*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "Simplify"}]], "Input",
+ CellChangeTimes->{{3.733192723864544*^9, 3.733192732615912*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox["\<\"\\!\\(\\*RowBox[{\\\"Simplify\\\", \\\"[\\\", \
+StyleBox[\\\"expr\\\", \\\"TI\\\"], \\\"]\\\"}]\\) performs a sequence of \
+algebraic and other transformations on \\!\\(\\*StyleBox[\\\"expr\\\", \\\"TI\
+\\\"]\\), and returns the simplest form it finds. \
+\\n\\!\\(\\*RowBox[{\\\"Simplify\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"expr\\\", \\\"TI\\\"], \\\",\\\", \
+StyleBox[\\\"assum\\\", \\\"TI\\\"]}], \\\"]\\\"}]\\) does simplification \
+using assumptions. \"\>", "MSG"], " ", 
+  ButtonBox[
+   StyleBox["\[RightSkeleton]", "SR"],
+   Active->True,
+   BaseStyle->"Link",
+   ButtonData->"paclet:ref/Simplify"]}]], "Print", "PrintUsage",
+ CellChangeTimes->{3.733192734244074*^9},
+ CellTags->"Info3733210734-6468119"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"F", "=", 
+   RowBox[{
+    RowBox[{"1", "/", 
+     RowBox[{"(", 
+      RowBox[{"4", " ", "Pi", " ", "E0"}], ")"}]}], "  ", "q1", " ", 
+    RowBox[{"q2", "/", 
+     RowBox[{"r", "^", "2"}]}]}]}], ";", 
+  RowBox[{"Simplify", "[", 
+   RowBox[{
+    RowBox[{"Integrate", "[", 
+     RowBox[{
+      RowBox[{"F", "  ", 
+       RowBox[{"Cos", "[", "0", "]"}]}], ",", 
+      RowBox[{"{", 
+       RowBox[{"r", ",", "ra", ",", "rb"}], "}"}]}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"rb", "<", "ra"}], ",", 
+      RowBox[{"ra", ">", "0"}], ",", 
+      RowBox[{"rb", ">", "0"}]}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.733192035598262*^9, 3.733192038842812*^9}, {
+   3.733192193099345*^9, 3.7331922841193075`*^9}, {3.733192491585374*^9, 
+   3.733192496673379*^9}, {3.733192544563247*^9, 3.7331925858308816`*^9}, {
+   3.733192656687222*^9, 3.7331927117002974`*^9}, {3.7334537550668545`*^9, 
+   3.7334537937628546`*^9}, {3.7334542455858545`*^9, 3.7334542620018544`*^9}, 
+   3.7334543641468544`*^9, 3.7334545887628546`*^9}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"q1", " ", "q2", " ", 
+   RowBox[{"(", 
+    RowBox[{
+     FractionBox["1", "ra"], "-", 
+     FractionBox["1", "rb"]}], ")"}]}], 
+  RowBox[{"4", " ", "E0", " ", "\[Pi]"}]]], "Output",
+ CellChangeTimes->{3.7334543687198544`*^9, 3.7334545940438547`*^9}]
+}, Open  ]],
+
+Cell[BoxData["\[IndentingNewLine]"], "Input",
+ CellChangeTimes->{3.7340021407876067`*^9}],
+
+Cell[BoxData[
+ RowBox[{"(*", "  ", 
+  RowBox[{"LECTURE", "\[Equal]", "12"}], "  ", "*)"}]], "Input",
+ CellChangeTimes->{{3.733454419473854*^9, 3.733454424761854*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.7340021359331436`*^9, 3.7340021385089664`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"sigma", "=", 
+     RowBox[{"2.3", " ", "Sin", 
+      RowBox[{"(", "xy", ")"}]}]}], ",", "     ", 
+    RowBox[{"0", "=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"<", "x", "\[LessEqual]", 
+          RowBox[{"y", 
+           RowBox[{"(", 
+            RowBox[{"Variable", " ", "limit"}], ")"}]}]}], "..."}], ".."}], 
+       RowBox[{"(", 
+        RowBox[{
+        "First", " ", "variable", " ", "limits", " ", "then", " ", "Constant",
+          "  ", 
+         RowBox[{"Limits", "."}]}], ")"}], "  ", "0"}], "=", 
+      RowBox[{"<", "y", "\[LessEqual]", "1"}]}]}], " ", ",", 
+    RowBox[{"Q", "=", 
+     RowBox[{"Total", " ", 
+      RowBox[{"charge", ".", "?"}]}]}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"?", "Integrate"}]}]], "Input",
+ CellChangeTimes->{
+  3.7334546487788544`*^9, 3.7334547511548543`*^9, {3.7334550057068543`*^9, 
+   3.7334551272108545`*^9}, {3.733455500506854*^9, 3.7334555126348543`*^9}, {
+   3.7334555712268543`*^9, 3.7334556081468544`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox["\<\"\\!\\(\\*RowBox[{\\\"Integrate\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"f\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"x\\\", \
+\\\"TI\\\"]}], \\\"]\\\"}]\\) gives the indefinite integral \\!\\(\\*RowBox[{\
+\\\"\[Integral]\\\", \\\"f\\\", \\\" \\\", \\\"d\\\", \\\"x\\\"}]\\). \
+\\n\\!\\(\\*RowBox[{\\\"Integrate\\\", \\\"[\\\", RowBox[{StyleBox[\\\"f\\\", \
+\\\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{StyleBox[\\\"x\\\", \\\"TI\
+\\\"], \\\",\\\", SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], \
+StyleBox[\\\"min\\\", \\\"TI\\\"]], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"max\\\", \
+\\\"TI\\\"]]}], \\\"}\\\"}]}], \\\"]\\\"}]\\) gives the definite integral \\!\
+\\(\\*RowBox[{SubsuperscriptBox[\\\"\[Integral]\\\", SubscriptBox[\\\"x\\\", \
+StyleBox[\\\"min\\\", \\\"TI\\\"]], SubscriptBox[\\\"x\\\", \
+StyleBox[\\\"max\\\", \\\"TI\\\"]]], \\\" \\\", \\\"f\\\", \\\" \\\", \\\"d\\\
+\", \\\"x\\\"}]\\). \\n\\!\\(\\*RowBox[{\\\"Integrate\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"f\\\", \\\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"min\\\", \
+\\\"TI\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], \
+StyleBox[\\\"max\\\", \\\"TI\\\"]]}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\
+\", RowBox[{StyleBox[\\\"y\\\", \\\"TI\\\"], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"y\\\", \\\"TI\\\"], StyleBox[\\\"min\\\", \
+\\\"TI\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"y\\\", \\\"TI\\\"], \
+StyleBox[\\\"max\\\", \\\"TI\\\"]]}], \\\"}\\\"}], \\\",\\\", StyleBox[\\\"\
+\[Ellipsis]\\\", \\\"TR\\\"]}], \\\"]\\\"}]\\) gives the multiple integral \
+\\!\\(\\*RowBox[{SubsuperscriptBox[\\\"\[Integral]\\\", \
+SubscriptBox[\\\"x\\\", StyleBox[\\\"min\\\", \\\"TI\\\"]], \
+SubscriptBox[\\\"x\\\", StyleBox[\\\"max\\\", \\\"TI\\\"]]], \
+RowBox[{\\\"d\\\", \\\"x\\\", RowBox[{SubsuperscriptBox[\\\"\[Integral]\\\", \
+SubscriptBox[\\\"y\\\", StyleBox[\\\"min\\\", \\\"TI\\\"]], \
+SubscriptBox[\\\"y\\\", StyleBox[\\\"max\\\", \\\"TI\\\"]]], \
+RowBox[{\\\"d\\\", \\\"\[InvisibleSpace]\\\", \\\"y\\\", \\\" \\\", \\\"\
+\[Ellipsis]\\\", \\\" \\\", \\\"f\\\"}]}]}]}]\\). \"\>", "MSG"], " ", 
+  ButtonBox[
+   StyleBox["\[RightSkeleton]", "SR"],
+   Active->True,
+   BaseStyle->"Link",
+   ButtonData->"paclet:ref/Integrate"]}]], "Print", "PrintUsage",
+ CellChangeTimes->{3.7334551289448547`*^9},
+ CellTags->"Info3733473128-4811212"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Integrate", "[", 
+   RowBox[{
+    RowBox[{"2.3", " ", 
+     RowBox[{"Sin", "[", 
+      RowBox[{"x", " ", "y"}], " ", "]"}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"y", ",", "0", ",", "1"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", "0", ",", "y"}], "}"}]}], "]"}], 
+  RowBox[{"(*", " ", 
+   RowBox[{"\[Integral]", 
+    RowBox[{"2.3", "Sinxy", " ", "dy", " ", 
+     RowBox[{"dx", ".", "\[IndentingNewLine]", "Integration"}], " ", "starts",
+      " ", "from", " ", "right", " ", "to", " ", 
+     RowBox[{"left", ".", "Numerical"}], " ", "limits", " ", "at", " ", "the",
+      " ", "end", " ", 
+     RowBox[{"ALWAYS", ".", "     ", 
+      RowBox[{"Integrate", "[", 
+       RowBox[{
+        StyleBox["f", "TI"], ",", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           StyleBox["x", "TI"], ",", 
+           SubscriptBox[
+            StyleBox["x", "TI"], 
+            StyleBox["min", "TI"]], ",", 
+           SubscriptBox[
+            StyleBox["x", "TI"], 
+            StyleBox["max", "TI"]]}], "}"}], 
+         RowBox[{"(", 
+          RowBox[{"Outer", "."}], ")"}]}], ",", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           StyleBox["y", "TI"], ",", 
+           SubscriptBox[
+            StyleBox["y", "TI"], 
+            StyleBox["min", "TI"]], ",", 
+           SubscriptBox[
+            StyleBox["y", "TI"], 
+            StyleBox["max", "TI"]]}], "}"}], 
+         RowBox[{"(", 
+          RowBox[{"inner", "."}], ")"}]}], ",", 
+        StyleBox["\[Ellipsis]", "TR"]}], "]"}]}]}]}], " ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.733455182610854*^9, 3.7334552116028547`*^9}, {
+  3.7334554838908544`*^9, 3.7334554916748543`*^9}, {3.7334556215888543`*^9, 
+  3.7334556315148544`*^9}, {3.7334557845468545`*^9, 3.7334558129558544`*^9}, {
+  3.7334559415158544`*^9, 3.733455968131854*^9}, {3.7334561600998545`*^9, 
+  3.733456191419854*^9}, {3.733456228235854*^9, 3.7334562427558546`*^9}, {
+  3.733456642867854*^9, 3.7334566492118545`*^9}, {3.7334567696288548`*^9, 
+  3.7334568662118545`*^9}}],
+
+Cell[BoxData["0.27578350330064944`"], "Output",
+ CellChangeTimes->{
+  3.733455925320854*^9, {3.7334561792628546`*^9, 3.7334561925978546`*^9}, 
+   3.7334562476448545`*^9, 3.7334566532348547`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "Sum"}]], "Input",
+ CellChangeTimes->{{3.7334570217928543`*^9, 3.733457028025854*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox["\<\"\\!\\(\\*RowBox[{\\\"Sum\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"f\\\", \\\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{StyleBox[\\\"i\\\", \\\"TI\\\"], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], StyleBox[\\\"max\\\", \
+\\\"TI\\\"]]}], \\\"}\\\"}]}], \\\"]\\\"}]\\) evaluates the sum \
+\\!\\(\\*RowBox[{UnderoverscriptBox[\\\"\[Sum]\\\", RowBox[{\\\"i\\\", \
+\\\"=\\\", \\\"1\\\"}], SubscriptBox[\\\"i\\\", StyleBox[\\\"max\\\", \
+FontSlant -> \\\"Italic\\\"]], LimitsPositioning -> True], \\\"f\\\"}]\\). \
+\\n\\!\\(\\*RowBox[{\\\"Sum\\\", \\\"[\\\", RowBox[{StyleBox[\\\"f\\\", \
+\\\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{StyleBox[\\\"i\\\", \\\"TI\
+\\\"], \\\",\\\", SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], \
+StyleBox[\\\"min\\\", \\\"TI\\\"]], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], StyleBox[\\\"max\\\", \
+\\\"TI\\\"]]}], \\\"}\\\"}]}], \\\"]\\\"}]\\) starts with \\!\\(\\*RowBox[{\\\
+\"i\\\", \\\"=\\\", SubscriptBox[\\\"i\\\", StyleBox[\\\"min\\\", FontSlant \
+-> \\\"Italic\\\"]]}]\\). \\n\\!\\(\\*RowBox[{\\\"Sum\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"f\\\", \\\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{StyleBox[\\\"i\\\", \\\"TI\\\"], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], StyleBox[\\\"min\\\", \
+\\\"TI\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], \
+StyleBox[\\\"max\\\", \\\"TI\\\"]], \\\",\\\", StyleBox[\\\"di\\\", \
+\\\"TI\\\"]}], \\\"}\\\"}]}], \\\"]\\\"}]\\) uses steps \
+\\!\\(\\*RowBox[{\\\"d\\\", \\\"\[InvisibleSpace]\\\", \\\"i\\\"}]\\). \\n\\!\
+\\(\\*RowBox[{\\\"Sum\\\", \\\"[\\\", RowBox[{StyleBox[\\\"expr\\\", \\\"TI\\\
+\"], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{StyleBox[\\\"i\\\", \\\"TI\\\"], \
+\\\",\\\", RowBox[{\\\"{\\\", RowBox[{SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\
+\\\"], StyleBox[\\\"1\\\", \\\"TR\\\"]], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], StyleBox[\\\"2\\\", \
+\\\"TR\\\"]], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\"TR\\\"]}], \\\"}\\\
+\"}]}], \\\"}\\\"}]}], \\\"]\\\"}]\\) uses successive values \
+\\!\\(\\*RowBox[{SubscriptBox[\\\"i\\\", \\\"1\\\"], \\\",\\\", SubscriptBox[\
+\\\"i\\\", \\\"2\\\"], \\\",\\\", \
+\\\"\[Ellipsis]\\\"}]\\).\\n\\!\\(\\*RowBox[{\\\"Sum\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"f\\\", \\\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{StyleBox[\\\"i\\\", \\\"TI\\\"], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], StyleBox[\\\"min\\\", \
+\\\"TI\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], \
+StyleBox[\\\"max\\\", \\\"TI\\\"]]}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\
+\", RowBox[{StyleBox[\\\"j\\\", \\\"TI\\\"], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"j\\\", \\\"TI\\\"], StyleBox[\\\"min\\\", \
+\\\"TI\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"j\\\", \\\"TI\\\"], \
+StyleBox[\\\"max\\\", \\\"TI\\\"]]}], \\\"}\\\"}], \\\",\\\", StyleBox[\\\"\
+\[Ellipsis]\\\", \\\"TR\\\"]}], \\\"]\\\"}]\\) evaluates the multiple sum \\!\
+\\(\\*RowBox[{UnderoverscriptBox[\\\"\[Sum]\\\", RowBox[{\\\"i\\\", \
+\\\"=\\\", SubscriptBox[\\\"i\\\", StyleBox[\\\"min\\\", FontSlant -> \
+\\\"Italic\\\"]]}], SubscriptBox[\\\"i\\\", StyleBox[\\\"max\\\", FontSlant \
+-> \\\"Italic\\\"]], LimitsPositioning -> True], \
+RowBox[{UnderoverscriptBox[\\\"\[Sum]\\\", RowBox[{\\\"j\\\", \\\"=\\\", \
+SubscriptBox[\\\"j\\\", StyleBox[\\\"min\\\", FontSlant -> \
+\\\"Italic\\\"]]}], SubscriptBox[\\\"j\\\", StyleBox[\\\"max\\\", FontSlant \
+-> \\\"Italic\\\"]], LimitsPositioning -> True], RowBox[{\\\"\[Ellipsis]\\\", \
+\\\"f\\\"}]}]}]\\). \"\>", "MSG"], " ", 
+  ButtonBox[
+   StyleBox["\[RightSkeleton]", "SR"],
+   Active->True,
+   BaseStyle->"Link",
+   ButtonData->"paclet:ref/Sum"]}]], "Print", "PrintUsage",
+ CellChangeTimes->{3.7334570289588547`*^9},
+ CellTags->"Info3733475028-8180010"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"Topic", ":", 
+    RowBox[{"Sums", " ", "and", " ", 
+     RowBox[{"Products", "."}]}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Question", ":"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Sum", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"5", "/", 
+       RowBox[{"2", "^", "n"}]}], " ", "-", " ", 
+      RowBox[{"1", "/", 
+       RowBox[{"3", "^", "n"}]}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"n", ",", "1", ",", "4"}], "}"}]}], "]"}], 
+   "\[IndentingNewLine]", "\"\<And \>\"", "\[IndentingNewLine]", 
+   RowBox[{"Sum", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"-", "1"}], ")"}], "^", "n"}], "  ", 
+      RowBox[{"2", "/", 
+       RowBox[{"4", "^", "n"}]}]}], " ", ",", 
+     RowBox[{"{", 
+      RowBox[{"n", ",", "0", ",", "Infinity"}], "}"}]}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.7334569474348545`*^9, 3.7334570087718544`*^9}, {
+  3.7334573893548546`*^9, 3.7334575495948544`*^9}}],
+
+Cell[BoxData[
+ FractionBox["5435", "1296"]], "Output",
+ CellChangeTimes->{
+  3.7334574660768547`*^9, {3.733457535789854*^9, 3.7334575522458544`*^9}}],
+
+Cell[BoxData["\<\"And \"\>"], "Output",
+ CellChangeTimes->{
+  3.7334574660768547`*^9, {3.733457535789854*^9, 3.733457552247854*^9}}],
+
+Cell[BoxData[
+ FractionBox["8", "5"]], "Output",
+ CellChangeTimes->{
+  3.7334574660768547`*^9, {3.733457535789854*^9, 3.7334575522678547`*^9}}]
+}, Open  ]]
+},
+WindowSize->{Full, Full},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+ShowSelection->True,
+Magnification->2.,
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (January 25, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "Info3732948791-4634186"->{
+  Cell[2180, 63, 2500, 40, 240, "Print",
+   CellTags->"Info3732948791-4634186"]},
+ "Info3732948806-8796545"->{
+  Cell[5628, 131, 2399, 37, 217, "Print",
+   CellTags->"Info3732948806-8796545"]},
+ "Info3732949188-1331655"->{
+  Cell[9253, 213, 378, 10, 83, "Print",
+   CellTags->"Info3732949188-1331655"]},
+ "Info3733208632-1756115"->{
+  Cell[14172, 352, 2478, 40, 240, "Print",
+   CellTags->"Info3733208632-1756115"]},
+ "Info3733210734-6468119"->{
+  Cell[22085, 539, 753, 16, 151, "Print",
+   CellTags->"Info3733210734-6468119"]},
+ "Info3733473128-4811212"->{
+  Cell[25714, 644, 2502, 40, 240, "Print",
+   CellTags->"Info3733473128-4811212"]},
+ "Info3733475028-8180010"->{
+  Cell[30671, 756, 3841, 60, 338, "Print",
+   CellTags->"Info3733475028-8180010"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"Info3732948791-4634186", 36392, 880},
+ {"Info3732948806-8796545", 36503, 883},
+ {"Info3732949188-1331655", 36615, 886},
+ {"Info3733208632-1756115", 36725, 889},
+ {"Info3733210734-6468119", 36838, 892},
+ {"Info3733473128-4811212", 36950, 895},
+ {"Info3733475028-8180010", 37063, 898}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 1610, 39, 369, "Input"],
+Cell[2180, 63, 2500, 40, 240, "Print",
+ CellTags->"Info3732948791-4634186"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4717, 108, 908, 21, 149, "Input"],
+Cell[5628, 131, 2399, 37, 217, "Print",
+ CellTags->"Info3732948806-8796545"]
+}, Open  ]],
+Cell[8042, 171, 339, 8, 99, "Input"],
+Cell[8384, 181, 347, 9, 60, "Input"],
+Cell[CellGroupData[{
+Cell[8756, 194, 236, 6, 60, "Input"],
+Cell[8995, 202, 99, 2, 59, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9131, 209, 119, 2, 60, "Input"],
+Cell[9253, 213, 378, 10, 83, "Print",
+ CellTags->"Info3732949188-1331655"]
+}, Open  ]],
+Cell[9646, 226, 2835, 72, 346, "Input"],
+Cell[12484, 300, 694, 18, 111, "Input"],
+Cell[13181, 320, 316, 9, 60, "Input"],
+Cell[13500, 331, 148, 2, 137, "Input"],
+Cell[13651, 335, 194, 4, 60, "Input"],
+Cell[13848, 341, 176, 3, 175, "Input"],
+Cell[CellGroupData[{
+Cell[14049, 348, 120, 2, 60, "Input"],
+Cell[14172, 352, 2478, 40, 240, "Print",
+ CellTags->"Info3733208632-1756115"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16687, 397, 1876, 49, 178, "Input"],
+Cell[18566, 448, 798, 15, 134, "Output"],
+Cell[19367, 465, 185, 3, 84, "Output"],
+Cell[19555, 470, 191, 3, 84, "Output"]
+}, Open  ]],
+Cell[19761, 476, 584, 18, 99, "Input"],
+Cell[20348, 496, 1592, 35, 289, "Input"],
+Cell[CellGroupData[{
+Cell[21965, 535, 117, 2, 60, "Input"],
+Cell[22085, 539, 753, 16, 151, "Print",
+ CellTags->"Info3733210734-6468119"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22875, 560, 1073, 27, 99, "Input"],
+Cell[23951, 589, 288, 8, 93, "Output"]
+}, Open  ]],
+Cell[24254, 600, 89, 1, 99, "Input"],
+Cell[24346, 603, 166, 3, 60, "Input"],
+Cell[24515, 608, 96, 1, 60, "Input"],
+Cell[CellGroupData[{
+Cell[24636, 613, 1075, 29, 213, "Input"],
+Cell[25714, 644, 2502, 40, 240, "Print",
+ CellTags->"Info3733473128-4811212"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28253, 689, 2067, 53, 180, "Input"],
+Cell[30323, 744, 194, 3, 59, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[30554, 752, 114, 2, 60, "Input"],
+Cell[30671, 756, 3841, 60, 338, "Print",
+ CellTags->"Info3733475028-8180010"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[34549, 821, 1046, 30, 213, "Input"],
+Cell[35598, 853, 149, 3, 412, "Output"],
+Cell[35750, 858, 132, 2, 328, "Output"],
+Cell[35885, 862, 143, 3, 412, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
